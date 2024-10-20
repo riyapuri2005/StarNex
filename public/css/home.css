@@ -99,7 +99,7 @@ section img#astronaut{
     white-space: nowrap;
     font-size: 7.5vw;
     z-index: 9;   
-    transform: translateY(-80px);
+    transform: translateY(-90px);
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 
     0 0 20px rgba(255, 255, 255, 0.3), 
     0 0 30px rgba(255, 255, 255, 0.244); 
@@ -111,7 +111,7 @@ section img#astronaut{
     white-space: nowrap;
     font-size: 4vw;
     z-index: 9;
-    margin-bottom: 250px;
+    margin-bottom: 350px;
     transform: translateY(-60px);
     text-shadow: 0 0 10px rgba(168, 225, 255, 0.6), 
     0 0 20px rgba(168, 225, 255, 0.4), 
@@ -290,7 +290,7 @@ a:hover{
     color: #ffffff;
 }
 .bottom-bar{
-    background: #1a1a1a;
+    background: #000000;
     text-align: center;
     padding: 10px 0;
     margin-top: 50px;

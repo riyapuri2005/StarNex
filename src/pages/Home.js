@@ -129,17 +129,17 @@ function Home() {
                       <h3>Follow Us</h3>
                       <ul className="social-icons">
                           <li><Link to="https://www.facebook.com/" target="_blank"><img
-                              src="https://webstockreview.net/images/white-facebook-icon-png-4.png" alt="Facebook"
-                              style={{height: '20px', width: '20px'}}/></Link></li>
+                              src="/image/facebook-icon-png-4.png" alt="Facebook"
+                              style={{height: '30px', width: '30px'}}/></Link></li>
                           <li><Link to="https://twitter.com/login" target="_blank"><img
-                              src="https://www.pinclipart.com/picdir/big/578-5789236_twitter-clipart.png" alt="x"
-                              style={{height: '17px', width: '20px'}}/></Link></li>
+                              src="/image/twitter-clipart.png" alt="x"
+                              style={{height: '28px', width: '30px'}}/></Link></li>
                           <li><Link to="https://www.instagram.com/" target="_blank"><img
-                              src="https://www.pngkey.com/png/full/1-19361_watercolor-instagram-icon-png-instagram-logo-white-on.png"
-                              alt="instagram" style={{height: '17px', width: '17px'}}/></Link></li>
+                              src="/image/instagram-new.png"
+                              alt="instagram" style={{height: '30px', width: '30px'}}/></Link></li>
                           <li><Link to="https://www.youtube.com/" target="_blank"><img
-                              src="https://th.bing.com/th/id/R.3cfbc995df96e1ace93e0d23e5884b3e?rik=7N4nANscprreig&riu=http%3a%2f%2fclipart-library.com%2fimages%2fdc4LABqni.png&ehk=wMo4WyijaHWTJt1nMQKvD06j9%2fjkDwXAO%2btufnjfRwU%3d&risl=&pid=ImgRaw&r=0"
-                              alt="yt" style={{height: '15px', width: '20px'}}/></Link></li>
+                              src="/image/youtube-app-white-icon.png"
+                              alt="yt" style={{height: '30px', width: '30px'}}/></Link></li>
                       </ul>
                   </div>
               </div>
