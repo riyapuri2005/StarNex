@@ -8,7 +8,7 @@ import FeedbackPage from './pages/Feedback';
 import LoginPage from './pages/Login';
 import SignupPage from './pages/Signup';
 import GamePage from './pages/Game';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 
 
 import './index.css';
@@ -19,14 +19,17 @@ root.render(
   <React.StrictMode>
       <Router>
           <Routes>
-              <Route path="/" element={<HomePage />} />
+              <Route path="/home" element={<HomePage />} />
               <Route path="/discover" element={<DiscoverPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/iris" element={<IrisPage />} />
               <Route path="/feedback" element={<FeedbackPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
+
               <Route path="/game" element={<GamePage />} />
+
+              <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
       </Router>
   </React.StrictMode>
