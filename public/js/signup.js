@@ -1,25 +1,5 @@
-// to generate blocks at back
-function generateSpans()
-{
-    for(let i=0; i<=271;i++) { document.getElementById("spanGenerate").appendChild(document.createElement("span")) }
-}
-
 // Debugging helper
 console.log("Script is running!");
-
-// Toggle password visibility
-function toggleVisible(icon) {
-    const inputField = icon.previousElementSibling;
-    if (inputField.type === "password") {
-        inputField.type = "text";
-        icon.classList.remove("bx-hide");
-        icon.classList.add("bx-show");
-    } else {
-        inputField.type = "password";
-        icon.classList.remove("bx-show");
-        icon.classList.add("bx-hide");
-    }
-}
 
 // Show error message
 function showError(input, message) {

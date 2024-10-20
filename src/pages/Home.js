@@ -1,11 +1,18 @@
 import {Link} from "react-router-dom";
+import {useEffect} from "react";
 
 
 function Home() {
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = "/js/home.js";
+        const existingScript = document.querySelector('script[src="/js/home.js"]');
+        if (!existingScript) { document.head.appendChild(script); }
+    }, []);
+
   return (
-      <div className="Home" style={{backgroundColor: "black"}}>
+      <div className="Home">
           <link rel="stylesheet" type="text/css" href="/css/homepage.css"/>
-          <script src="/js/home.js"></script>
 
           <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-expand-xs fixed-top">
               <div className="container-fluid ">
