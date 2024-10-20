@@ -4,9 +4,9 @@
     <script src="./public/js/home.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StarNex</title>
-    <link rel="icon" href="">
-    <link rel="stylesheet" type="text/css" href="public/css/homepage.css">
+    <title>dummy</title>
+    <link rel="icon" href="public/image/Whitelogo.png">
+    <link rel="stylesheet" type="text/css" href="public/css/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
@@ -18,7 +18,7 @@
             <a class="navbar-brand" href="#">
                 <img src="public/image/textLogo.png" alt="Logo" width="auto" height="24" class="d-inline-block align-text-top">
             </a>
-    
+
             <div class="navbar-nav ms-auto d-flex align-items-center" id="navbarSupportedContent">
                 <a class="nav-link" href="#">
                     <img src="public/image/notification.png" id="notifications" alt="Notifications" width="auto" height="30">
@@ -35,7 +35,7 @@
             </div>
         </div>
     </nav>
-    
+
 
 <!-- PARALLAX -->
 
@@ -48,12 +48,34 @@
     <h2 id="text1" class="TheStars"> THE STARS </h2>
     <a href="discover.html" id="btn" target="_blank" style="text-align: center;"> PLAY NOW </a>
     <img src="public/image/1Front.png" style="height: 100%; width: 100%;" id="mountains_front" class="parallax">
-    
+
 </section>
 
 <img src="public/image/2astronaut.png" id="astronaut" class="parallax right-bottom-image">
 
+<script>
+    let stars = document.getElementById('stars');
+    let mountains_behind = document.getElementById('mountains_behind');
+    let text1 = document.getElementById('text1');
+    let text2 = document.getElementById('text2');
+    let btn = document.getElementById('btn');
+    let mountains_front1 = document.getElementById('mountains_front1');
+    let mountains_front2 = document.getElementById('mountains_front2');
+    let astronaut = document.getElementById('astronaut');
 
+    const initialTextOffsetTop = text1.offsetTop;
+    const initialTextOffsetTop2 = text2.offsetTop;
+
+    window.addEventListener('scroll', function(){
+        let value = window.scrollY;
+        stars.style.left = value * 0.25 + 'px';
+        text1.style.top = (initialTextOffsetTop + value * 0.5) + 'px';
+        text2.style.top = (initialTextOffsetTop2 + value * 0.5) + 'px';
+        btn.style.bottom = value * 1.05 + 'px';
+        mountains_behind.style.top = value * 0.45 + 'px';
+        btn.style.marginTop = value * 1.25 + 'px';
+    })
+    </script>
 
 <!--  AI CHAT BOT -->
 

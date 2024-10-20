@@ -8,20 +8,27 @@ function Home() {
         script.src = "/js/home.js";
         const existingScript = document.querySelector('script[src="/js/home.js"]');
         if (!existingScript) { document.head.appendChild(script); }
+
+        const link1 = document.createElement('link');
+        link1.rel = "stylesheet";
+        link1.href = "/css/home.css";
+        const existingLink1 = document.querySelector('link[href="/css/home.css"]');
+        if (!existingLink1) { document.head.appendChild(link1); }
     }, []);
 
   return (
-      <div className="Home">
-          <link rel="stylesheet" type="text/css" href="/css/homepage.css"/>
+      <div className="Home" style={{backgroundColor: "black"}}>
 
           <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-expand-xs fixed-top">
               <div className="container-fluid ">
                   <Link className="navbar-brand" to="#">
-                      <img src="/image/textLogo.png" alt="Logo" width="auto" height="24" className="d-inline-block align-text-top"/>
+                      <img src="/image/textLogo.png" alt="Logo" width="auto" height="24"
+                           className="d-inline-block align-text-top"/>
                   </Link>
                   <div className="navbar-nav ms-auto d-flex align-items-center" id="navbarSupportedContent">
                       <Link className="nav-link" to="#">
-                          <img src="/image/notification.png" id="notifications" alt="Notifications" width="auto" height="30"/>
+                          <img src="/image/notification.png" id="notifications" alt="Notifications" width="auto"
+                               height="30"/>
                       </Link>
                       <Link className="nav-link" to="#">
                           <img src="/image/friend.png" id="friends" alt="Friends" width="auto" height="28"/>
@@ -38,16 +45,21 @@ function Home() {
 
 
           <section>
-              <img src="/image/background.png" style={{height: '130%', width: '100%'}} id="background" className="parallax"/>
+              <img src="/image/background.png" style={{height: '130%', width: '100%'}} id="background"
+                   className="parallax"/>
               <img src="/image/stars.png" style={{opacity: '70%'}} id="stars"/>
-              <img src="/image/3Front.png" style={{height: '100%', width: '100%'}} id="mountains_behind" className="parallax"/>
-              <img src="/image/2Front.png" style={{height: '100%', width: '100%'}} id="mountains_front" className="parallax"/>
+              <img src="/image/3Front.png" style={{height: '100%', width: '100%'}} id="mountains_behind"
+                   className="parallax"/>
+              <img src="/image/2Front.png" style={{height: '100%', width: '100%'}} id="mountains_front"
+                   className="parallax"/>
               <h6 id="text2" className="LevelUp"> LEVEL UP </h6>
               <h2 id="text1" className="TheStars"> THE STARS </h2>
               <Link to="/game" id="btn" target="_blank" style={{textAlign: 'center'}}> PLAY NOW </Link>
-              <img src="/image/1Front.png" style={{height: '100%', width: '100%'}} id="mountains_front" className="parallax"/>
+              <img src="/image/1Front.png" style={{height: '100%', width: '100%'}} id="mountains_front"
+                   className="parallax"/>
           </section>
 
+          <img src="/image/2astronaut.png" id="astronaut" className="parallax right-bottom-image"/>
 
           <div className="chatbot-icon">
               <Link to="/iris" target="_blank"> <img src="/image/IRIS.png" alt="Chatbot"/> </Link>
@@ -116,10 +128,18 @@ function Home() {
                   <div className="footer-content">
                       <h3>Follow Us</h3>
                       <ul className="social-icons">
-                          <li><Link to="https://www.facebook.com/" target="_blank"><img src="https://webstockreview.net/images/white-facebook-icon-png-4.png" alt="Facebook" style={{height: '20px', width: '20px'}}/></Link></li>
-                          <li><Link to="https://twitter.com/login" target="_blank"><img src="https://www.pinclipart.com/picdir/big/578-5789236_twitter-clipart.png" alt="x" style={{height: '17px', width: '20px'}}/></Link></li>
-                          <li><Link to="https://www.instagram.com/" target="_blank"><img src="https://www.pngkey.com/png/full/1-19361_watercolor-instagram-icon-png-instagram-logo-white-on.png" alt="instagram" style={{height: '17px', width: '17px'}}/></Link></li>
-                          <li><Link to="https://www.youtube.com/" target="_blank"><img src="https://th.bing.com/th/id/R.3cfbc995df96e1ace93e0d23e5884b3e?rik=7N4nANscprreig&riu=http%3a%2f%2fclipart-library.com%2fimages%2fdc4LABqni.png&ehk=wMo4WyijaHWTJt1nMQKvD06j9%2fjkDwXAO%2btufnjfRwU%3d&risl=&pid=ImgRaw&r=0" alt="yt" style={{height: '15px', width: '20px'}}/></Link></li>
+                          <li><Link to="https://www.facebook.com/" target="_blank"><img
+                              src="https://webstockreview.net/images/white-facebook-icon-png-4.png" alt="Facebook"
+                              style={{height: '20px', width: '20px'}}/></Link></li>
+                          <li><Link to="https://twitter.com/login" target="_blank"><img
+                              src="https://www.pinclipart.com/picdir/big/578-5789236_twitter-clipart.png" alt="x"
+                              style={{height: '17px', width: '20px'}}/></Link></li>
+                          <li><Link to="https://www.instagram.com/" target="_blank"><img
+                              src="https://www.pngkey.com/png/full/1-19361_watercolor-instagram-icon-png-instagram-logo-white-on.png"
+                              alt="instagram" style={{height: '17px', width: '17px'}}/></Link></li>
+                          <li><Link to="https://www.youtube.com/" target="_blank"><img
+                              src="https://th.bing.com/th/id/R.3cfbc995df96e1ace93e0d23e5884b3e?rik=7N4nANscprreig&riu=http%3a%2f%2fclipart-library.com%2fimages%2fdc4LABqni.png&ehk=wMo4WyijaHWTJt1nMQKvD06j9%2fjkDwXAO%2btufnjfRwU%3d&risl=&pid=ImgRaw&r=0"
+                              alt="yt" style={{height: '15px', width: '20px'}}/></Link></li>
                       </ul>
                   </div>
               </div>
