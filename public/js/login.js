@@ -1,13 +1,4 @@
-// to generate blocks at back
-function generateSpans()
-{
-    for(let i=0; i<=271;i++) { document.getElementById("spanGenerate").appendChild(document.createElement("span")) }
-}
-
-// Debugging helper
-console.log("Script is running!");
-
-// Toggle password visibility
+// Function to toggle password visibility
 function toggleVisible(icon) {
     const inputField = icon.previousElementSibling;
     if (inputField.type === "password") {
@@ -21,95 +12,73 @@ function toggleVisible(icon) {
     }
 }
 
-// Show error message
-function showError(input, message) {
-    const errorSpan = input.parentElement.querySelector('.error');
-    errorSpan.textContent = message;
-    errorSpan.style.display = 'block';
+// Show error message and add red border
+function showError(input, errorElement, message) {
+    errorElement.textContent = message;
+    errorElement.style.display = 'block';
+    input.classList.add('error-border');
 }
 
-// Clear error message
-function clearError(input) {
-    const errorSpan = input.parentElement.querySelector('.error');
-    errorSpan.textContent = '';
-    errorSpan.style.display = 'none';
+// Clear error message and remove red border
+function clearError(input, errorElement) {
+    errorElement.style.display = 'none';
+    input.classList.remove('error-border');
 }
 
-// Form validation
-function validateForm(event) {
+// Form validation logic
+function validateLoginForm(event) {
     event.preventDefault(); // Prevent form submission
 
     let isValid = true;
 
-// Get all input elements
-    const nameInput = document.getElementById('name');
-    const usernameInput = document.getElementById('username');
+    // Get all input elements
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirmPassword');
 
-// Debugging: log input values
-    console.log("Form values:", {
-        name: nameInput.value,
-        username: usernameInput.value,
-        email: emailInput.value,
-        password: passwordInput.value,
-        confirmPassword: confirmPasswordInput.value
-    });
+    // Get all error elements
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
+    const confirmPasswordError = document.getElementById('confirmPasswordError');
 
-// Name validation
-    if (nameInput.value.trim() === '') {
-        showError(nameInput, 'Name is required');
-        isValid = false;
-    } else {
-        clearError(nameInput);
-    }
-
-// Username validation
-    if (usernameInput.value.trim() === '') {
-        showError(usernameInput, 'Username is required');
-        isValid = false;
-    } else {
-        clearError(usernameInput);
-    }
-
-// Email validation
+    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(emailInput.value.trim())) {
-        showError(emailInput, 'Enter a valid email address');
+        showError(emailInput, emailError, 'Enter a valid email address');
         isValid = false;
     } else {
-        clearError(emailInput);
+        clearError(emailInput, emailError);
     }
 
-// Password validation (min 8 chars)
+    // Password validation (minimum 8 characters)
     if (passwordInput.value.trim().length < 8) {
-        showError(passwordInput, 'Password must be at least 8 characters');
+        showError(passwordInput, passwordError, 'Password must be at least 8 characters');
         isValid = false;
     } else {
-        clearError(passwordInput);
+        clearError(passwordInput, passwordError);
     }
 
-// Confirm password validation
+    // Confirm password validation (must match password)
     if (passwordInput.value !== confirmPasswordInput.value) {
-        showError(confirmPasswordInput, 'Passwords do not match');
+        showError(confirmPasswordInput, confirmPasswordError, 'Passwords do not match');
         isValid = false;
     } else {
-        clearError(confirmPasswordInput);
+        clearError(confirmPasswordInput, confirmPasswordError);
     }
 
-// Submit form if valid
+    // Submit form if valid
     if (isValid) {
-        console.log("Form is valid! Proceeding to submit...");
-        alert("Form submitted successfully!");
-// You can now submit the form or redirect to another page
-    } else {
-        console.log("Form is invalid. Errors were found.");
+        alert('Login successful!');
+        // Here, you can allow form submission or redirect to another page.
     }
 }
 
-// Attach form validation after the DOM has loaded
-window.addEventListener('DOMContentLoaded', function() {
-    console.log("DOM fully loaded and parsed.");
-    document.getElementById('signupForm').addEventListener('submit', validateForm);
-});
+// Attach form validation event listener after the DOM has loaded
+document.getElementById('loginForm').addEventListener('submit', validateLoginForm);
+
+// Background spans generation (your original function)
+function generateSpans() {
+    for (let i = 0; i <= 271; i++) {
+        document.getElementById("spanGenerate").appendChild(document.createElement("span"));
+    }
+}
