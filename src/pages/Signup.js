@@ -4,36 +4,30 @@ import React, { useEffect } from 'react';
 
 function Signup() {
     useEffect(() => {
-        const link = document.createElement('link');
-        link.rel = "stylesheet";
-        link.href = "/css/auth.css";
-        const existingScript = document.querySelector('link[src="/js/home.js"]');
-        if (!existingScript) { document.head.appendChild(script); }
+        const link1 = document.createElement('link');
+        link1.rel = "stylesheet";
+        link1.href = "/css/auth.css";
+        const existingLink1 = document.querySelector('link[href="/css/auth.css"]');
+        if (!existingLink1) { document.head.appendChild(link1); }
+
+
+        const link2 = document.createElement('link');
+        link2.rel = "stylesheet";
+        link2.href = "https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css";
+        const existingLink2 = document.querySelector('link[href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"]');
+        if (!existingLink2) { document.head.appendChild(link2); }
+
 
         for(let i=0; i<=271;i++) { document.getElementById("spanGenerate").appendChild(document.createElement("span")) }
     }, []);  // Empty dependency array ensures the effect runs only once, on page load
 
 
-    const toggleVisibility = (icon) => {
-        const inputField = icon.previousElementSibling;
-        if (inputField.type === "password") {
-            inputField.type = "text";
-            icon.classList.remove("bx-hide");
-            icon.classList.add("bx-show");
-        } else {
-            inputField.type = "password";
-            icon.classList.remove("bx-show");
-            icon.classList.add("bx-hide");
-        }
-    };
-
     return (
         <div className="Signup">
 
+            <script src="/js/signup.js"></script>
 
-            <link rel="stylesheet" href="/css/auth.css"/>
             <section id="spanGenerate"></section>
-
 
             <div className="container">
                 <header>Sign Up Form</header>
@@ -59,14 +53,40 @@ function Signup() {
                     <div className="field create-password">
                         <div className="input-field">
                             <input type="password" placeholder="Password" className="password" id="password"/>
-                            <i className="bx bx-hide show-hide" onClick={() => toggleVisibility}></i>
+                            <i id="peye" className="bx bx-hide show-hide" onClick={() => {
+                                const inputField = document.getElementById("password");
+                                const eye = document.getElementById("peye");
+                                if (inputField.type === "password") {
+                                    inputField.type = "text";
+                                    eye.classList.remove("bx-hide");
+                                    eye.classList.add("bx-show");
+                                } else {
+                                    inputField.type = "password";
+                                    eye.classList.remove("bx-show");
+                                    eye.classList.add("bx-hide");
+                                }
+                            }
+                            }></i>
                             <span className="error" id="passwordError"></span>
                         </div>
                     </div>
                     <div className="field confirm-password">
                         <div className="input-field">
                             <input type="password" placeholder="Confirm Password" className="cPassword" id="confirmPassword"/>
-                            <i onClick={() => toggleVisibility} className="bx bx-hide show-hide"></i>
+                            <i id="cpeye" className="bx bx-hide show-hide" onClick={() => {
+                                const inputField = document.getElementById("confirmPassword");
+                                const eye = document.getElementById("cpeye");
+                                    if (inputField.type === "password") {
+                                        inputField.type = "text";
+                                        eye.classList.remove("bx-hide");
+                                        eye.classList.add("bx-show");
+                                    } else {
+                                        inputField.type = "password";
+                                        eye.classList.remove("bx-show");
+                                        eye.classList.add("bx-hide");
+                                    }
+                                }
+                            }></i>
                             <span className="error" id="confirmPasswordError"></span>
                         </div>
                     </div>
@@ -79,8 +99,6 @@ function Signup() {
                     </div>
                 </form>
             </div>
-
-            <script src="/js/signup.js"></script>
 
 
         </div>
