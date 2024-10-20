@@ -3,7 +3,10 @@ import {Link} from "react-router-dom";
 
 function Home() {
   return (
-      <div className="Home">
+      <div className="Home" style={{backgroundColor: "black"}}>
+          <link rel="stylesheet" type="text/css" href="/css/homepage.css"/>
+          <script src="/js/home.js"></script>
+
           <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-expand-xs fixed-top">
               <div className="container-fluid ">
                   <Link className="navbar-brand" to="#">
@@ -39,7 +42,84 @@ function Home() {
           </section>
 
 
+          <div className="chatbot-icon">
+              <Link to="/iris" target="_blank"> <img src="/image/IRIS.png" alt="Chatbot"/> </Link>
+          </div>
 
+
+          <h1 style={{color: '#cdefff'}} className="text-glow"> ABOUT US </h1>
+
+
+          <p style={{color: '#ffffff', marginLeft: '20px'}} className="p-5">
+              Welcome to our gaming website, the ultimate destination where excitement and fun come together to create
+              unforgettable gaming experiences! We are passionate about bringing you a diverse collection of online
+              games designed to cater to all kinds of gamers. Whether you're a fan of adrenaline-pumping action,
+              intricate puzzles that challenge your intellect, or strategic games that test your planning skills, our
+              platform has something that will captivate and entertain you.
+              <br/> <br/>
+              Our extensive library of games is curated to ensure that there’s always something new and engaging to
+              discover. From the thrill of high-speed racing games to the satisfaction of solving complex puzzles, we
+              aim to provide high-quality gaming experiences that keep you coming back for more. Our platform is
+              designed to be user-friendly and accessible, making it easy for you to find your favorite games and dive
+              right into the action.
+              <br/> <br/>
+              One of the standout features of our site is our support for two-player games. Unlike many other platforms,
+              we understand the joy of sharing gaming moments with friends and family. Our website is tailored to
+              enhance this experience by allowing two players to control the game from the same keyboard. This feature
+              adds a layer of fun and competition, making our games ideal for group play and friendly rivalry. Imagine
+              teaming up with a friend to tackle challenges or competing head-to-head in an intense game—our platform
+              makes it possible and enjoyable.
+              <br/> <br/>
+              In addition to the core gaming experience, we are committed to providing a seamless and immersive
+              interface. Our website is designed with your convenience in mind, offering smooth navigation and quick
+              access to your favorite games. We continuously update our game library to include the latest and most
+              exciting titles, ensuring that there's always something fresh to explore.
+              <br/> <br/>
+              Our mission is not only to offer a great selection of games but also to foster a community of gamers who
+              share a passion for fun and excitement. We believe that gaming is more than just a pastime; it’s a way to
+              connect with others, build friendships, and create lasting memories. That’s why we strive to make our
+              platform a place where gamers can come together and enjoy high-quality games in a friendly and welcoming
+              environment.
+              <br/> <br/>
+              Whether you’re looking to challenge yourself, unwind after a long day, or have a great time with friends,
+              our gaming website has you covered. We invite you to explore our diverse range of games, take advantage of
+              our two-player feature, and immerse yourself in the world of online gaming like never before. Join us
+              today and experience the best in gaming entertainment!
+          </p>
+
+
+          <footer>
+              <div className="container" id="footer">
+                  <div className="footer-content">
+                      <h3>Contact Us</h3>
+                      <p>Email: starnex@galaxy.com</p>
+                      <p>Phone:+91 1234567890</p>
+                      <p>Address: 123, Model Town, XYZ Nagar, Rajpura</p>
+                  </div>
+                  <div className="footer-content">
+                      <h3>Quick Links</h3>
+                      <ul className="list">
+                          <li><Link to="/signUp" target="_blank"></Link>Register</li>
+                          <li><Link to="/discover" target="_blank">Discover</Link></li>
+                          <li><Link to="/iris" target="_blank">IrisAI</Link></li>
+                          <li><Link to="/feedback" target="_blank">Feedback</Link></li>
+                          <li><Link to="./https://mail.google.com/mail/u/0/#inbox" target="_blank">Contact</Link></li>
+                      </ul>
+                  </div>
+                  <div className="footer-content">
+                      <h3>Follow Us</h3>
+                      <ul className="social-icons">
+                          <li><Link to="https://www.facebook.com/" target="_blank"><img src="https://webstockreview.net/images/white-facebook-icon-png-4.png" alt="Facebook" style={{height: '20px', width: '20px'}}/></Link></li>
+                          <li><Link to="https://twitter.com/login" target="_blank"><img src="https://www.pinclipart.com/picdir/big/578-5789236_twitter-clipart.png" alt="x" style={{height: '17px', width: '20px'}}/></Link></li>
+                          <li><Link to="https://www.instagram.com/" target="_blank"><img src="https://www.pngkey.com/png/full/1-19361_watercolor-instagram-icon-png-instagram-logo-white-on.png" alt="instagram" style={{height: '17px', width: '17px'}}/></Link></li>
+                          <li><Link to="https://www.youtube.com/" target="_blank"><img src="https://th.bing.com/th/id/R.3cfbc995df96e1ace93e0d23e5884b3e?rik=7N4nANscprreig&riu=http%3a%2f%2fclipart-library.com%2fimages%2fdc4LABqni.png&ehk=wMo4WyijaHWTJt1nMQKvD06j9%2fjkDwXAO%2btufnjfRwU%3d&risl=&pid=ImgRaw&r=0" alt="yt" style={{height: '15px', width: '20px'}}/></Link></li>
+                      </ul>
+                  </div>
+              </div>
+              <div className="bottom-bar">
+                  <p>&copy; 2024 STARNEX . All rights reserved</p>
+              </div>
+          </footer>
       </div>
   );
 }
