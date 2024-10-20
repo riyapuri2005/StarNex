@@ -1,11 +1,11 @@
 
 
-function HomePage() {
+function Iris() {
   return (
-      <div className="App">
+      <div className="Iris">
 
       </div>
   );
 }
 
-export default HomePage;
+export default Iris;

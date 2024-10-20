@@ -1,11 +1,11 @@
 
 
-function HomePage() {
+function Contact() {
   return (
-      <div className="App">
+      <div className="Contact">
 
       </div>
   );
 }
 
-export default HomePage;
+export default Contact;

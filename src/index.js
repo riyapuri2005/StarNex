@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
+import HomePage from './pages/Home';
+import DiscoverPage from './pages/Discover';
+import ContactPage from './pages/Contact';
+import IrisPage from './pages/Iris';
+import FeedbackPage from './pages/Feedback';
+import LoginPage from './pages/Login';
+import SignupPage from './pages/Signup';
+import GamePage from './pages/Game';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
 import './index.css';
-import HomePage from './pages/HomePage';
-import Discover from './pages/Discover';
-import Contact from './pages/Contact';
-import Iris from './pages/Iris';
-import Feedback from './pages/Feedback';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Game from './pages/Game';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,16 +20,14 @@ root.render(
       <Router>
           <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/discover" element={<HomePage />} />
-              <Route path="/contact" element={<HomePage />} />
-              <Route path="/iris" element={<HomePage />} />
-              <Route path="/feedback" element={<HomePage />} />
-              <Route path="/login" element={<HomePage />} />
-              <Route path="/signup" element={<HomePage />} />
-              <Route path="/game" element={<HomePage />} />
-              <Route path="/game/spacerock" element={<HomePage />} />
+              <Route path="/discover" element={<DiscoverPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/iris" element={<IrisPage />} />
+              <Route path="/feedback" element={<FeedbackPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/signup" element={<SignupPage />} />
+              <Route path="/game" element={<GamePage />} />
           </Routes>
       </Router>
-    <HomePage />
   </React.StrictMode>
 );

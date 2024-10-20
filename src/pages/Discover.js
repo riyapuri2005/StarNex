@@ -1,11 +1,11 @@
 
 
-function HomePage() {
+function Discover() {
   return (
-      <div className="App">
+      <div className="Discover">
 
       </div>
   );
 }
 
-export default HomePage;
+export default Discover;

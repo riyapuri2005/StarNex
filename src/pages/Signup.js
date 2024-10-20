@@ -1,11 +1,11 @@
 
 
-function HomePage() {
+function Signup() {
   return (
-      <div className="App">
+      <div className="Signup">
 
       </div>
   );
 }
 
-export default HomePage;
+export default Signup;

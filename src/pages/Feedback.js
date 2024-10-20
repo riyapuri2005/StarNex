@@ -1,11 +1,11 @@
 
 
-function HomePage() {
+function Feedback() {
   return (
-      <div className="App">
+      <div className="Feedback">
 
       </div>
   );
 }
 
-export default HomePage;
+export default Feedback;

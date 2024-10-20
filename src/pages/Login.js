@@ -1,11 +1,11 @@
 
 
-function HomePage() {
+function Login() {
   return (
-      <div className="App">
+      <div className="Login">
 
       </div>
   );
 }
 
-export default HomePage;
+export default Login;
