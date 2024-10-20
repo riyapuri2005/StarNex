@@ -4,6 +4,12 @@ import React, { useEffect } from 'react';
 
 function Signup() {
     useEffect(() => {
+        const link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = "/css/auth.css";
+        const existingScript = document.querySelector('link[src="/js/home.js"]');
+        if (!existingScript) { document.head.appendChild(script); }
+
         for(let i=0; i<=271;i++) { document.getElementById("spanGenerate").appendChild(document.createElement("span")) }
     }, []);  // Empty dependency array ensures the effect runs only once, on page load
 
@@ -25,7 +31,6 @@ function Signup() {
         <div className="Signup">
 
 
-            <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css'/>
             <link rel="stylesheet" href="/css/auth.css"/>
             <section id="spanGenerate"></section>
 
