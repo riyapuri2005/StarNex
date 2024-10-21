@@ -1,21 +1,18 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
 }
 
+/* Body Styles */
 body {
     background: linear-gradient(to bottom, #000428, #9acdfa);
     color: #fff;
     font-family: Arial, sans-serif;
+    position: relative;
 }
 
-
-
-
-/* Navbar styles */
-
-
-
+/* Navbar Styles */
 header {
     position: fixed;
     top: 0;
@@ -28,13 +25,13 @@ header {
     background: black;
     padding: 2rem 9%;
     box-shadow: 0 .5rem 1rem rgb(0, 0, 0, .1);
-    text-decoration: none;
 }
-
 
 nav.navbar {
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    align-items: center;
 }
 
 header .navbar a {
@@ -49,6 +46,38 @@ header .navbar a:hover {
     text-decoration: underline;
 }
 
+/* Search Bar Styles */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem; /* Space between Contact link and search bar */
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px 0 0 5px; /* Rounded corners on the left */
+    background-color: #444;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.search-bar button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0 5px 5px 0; /* Rounded corners on the right */
+    background-color: rgb(0, 238, 255);
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: var(--red); /* Change background on hover */
+}
+
+/* Mobile Menu Bar */
 #menu-bar {
     font-size: 3rem;
     cursor: pointer;
@@ -59,55 +88,62 @@ header .navbar a:hover {
     display: none;
 }
 
+/* Responsive Styling for Search Bar and Navbar */
+@media (max-width: 768px) {
+    #menu-bar {
+        display: block;
+    }
 
-/* Search Bar styles */
+    nav.navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: black;
+        flex-direction: column; /* Stack items vertically */
+        display: none;
+    }
 
-.search-bar {
-    display: flex;
-    align-items: center;
+    nav.navbar.active {
+        display: flex;
+    }
+
+    header .navbar a {
+        margin: 1rem;
+        padding: 1.5rem;
+        font-size: 1.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .search-bar {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .search-bar input {
+        width: 70%;
+        margin-right: 0.5rem;
+    }
+
+    .search-bar button {
+        width: 30%;
+    }
+
+    header .navbar a:hover {
+        background-color: #333;
+    }
 }
 
-
-.search-bar input[type="text"] {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    margin-right: 10px;
-    width: 200px;
-}
-
-.search-bar button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-.search-bar button i {
-    font-size: 20px;
-    color: #87cefa;
-    transition: color 0.3s;
-}
-
-.search-bar button:hover i {
-    color: #005f7f;
-}
-
-
-
-
-
-/* Games Section styles */
+/* Games Section Styles */
 .games-section {
     position: relative;
-    top: 6px;
+    top: 70px; /* Space for fixed header */
     padding: 50px;
-    margin-top: 30px;
-    top: 50px;
     text-align: center;
     width: 80%;
-    margin-left: 10%;
+    margin: 0 auto;
+    z-index: 0; /* Make sure it's behind the sidebar */
 }
 
 .games-section h2 {
@@ -117,36 +153,80 @@ header .navbar a:hover {
     letter-spacing: 1px;
 }
 
-
 .game-grid {
     display: grid;
     grid-template-columns: repeat(5, 16%);
     gap: 10px;
     justify-content: center;
-
 }
 
-/* Game Item styles */
-
+/* Game Item Styles */
 .game-item {
     background-color: #444;
     padding: 10px;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    transition: transform 0.3s ease;
-    width: 120px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px;
     height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Info box that slides in */
+.game-info {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transform: translateX(0);
+}
+
+.game-item:hover .game-info {
+    left: 0;
+    opacity: 1;
+    transform: translateX(0); /* Moves the info box fully into view */
+}
+
+/* Example content for the game info */
+.game-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.game-info p {
+    font-size: 14px;
+    margin: 0;
 }
 
 .game-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    transform: translateY(-10px) scale(1.05); /* Lift up and slightly zoom in */
+    box-shadow: 0 15px 25px rgba(0, 255, 255, 0.3), 0 10px 10px rgba(0, 0, 0, 0.2); /* Add glow and depth */
+}
 
+.game-item:hover img {
+    filter: blur(5px); /* Apply a blur effect to the background image */
+    transition: filter 0.4s ease; /* Smooth transition for the blur effect */
+}
+
+.game-item img {
+    transition: filter 0.4s ease; /* Ensure the transition is smooth when hovering */
 }
 
 .game-item img {
@@ -162,23 +242,22 @@ header .navbar a:hover {
     text-align: center;
 }
 
-/* Sidebar styles */
+/* Sidebar Styles */
 .sidebar {
     position: fixed;
-    top: 100px;
+    top: 100px; /* Adjusted to not overlap the navbar */
     left: 0;
     width: 50px;
-    height: 100vh;
+    height: calc(100vh - 100px); /* Full height minus navbar */
     background-color: #333;
     padding: 20px;
-
+    overflow-y: auto; /* Add vertical scrolling */
     transition: width 0.3s ease;
-    overflow: hidden;
-
+    overflow-x: hidden;
+    z-index: 1; /* Make sure it's above the gaming boxes */
 }
 
 .sidebar:hover {
-    white-space: nowrap;
     width: 200px;
 }
 
@@ -193,15 +272,16 @@ header .navbar a:hover {
 }
 
 .sidebar a {
-    display: block;
+    display: flex; /* Change to flex for icon and text alignment */
+    align-items: center;
     text-decoration: none;
     color: #fff;
+    padding: 10px 0;
 }
 
 .sidebar a:hover {
     background-color: #444;
 }
-
 
 .sidebar i {
     font-size: 24px;
@@ -218,11 +298,47 @@ header .navbar a:hover {
 
 .sidebar:hover span {
     display: inline-block;
+    opacity: 1;
+}
+
+/* Mobile Sidebar Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        top: 50px; /* Adjust top position */
+        height: calc(100vh - 50px); /* Make sidebar full height minus header height */
+        padding: 10px;
+        width: 40px;
+    }
+
+    .sidebar:hover {
+        width: 150px;
+    }
+
+    .sidebar li {
+        margin-bottom: 15px;
+    }
+
+    .sidebar a {
+        padding: 8px 0;
+    }
+
+    .sidebar i {
+        font-size: 20px;
+        margin-right: 5px;
+    }
+
+    .sidebar span {
+        font-size: 14px;
+    }
+}
+
+.sidebar:hover span {
+    display: inline-block;
     vertical-align: middle;
     transition-delay: 0.3s;
 }
 
-/* 3D moving border animation */
+/* 3D Moving Border Animation */
 .game-item::before,
 .game-item::after {
     content: '';
@@ -272,7 +388,7 @@ header .navbar a:hover {
 }
 
 .game-item {
-    width: 300px;
+    width: 350px;
     height: auto;
     overflow: hidden;
     position: relative;
@@ -287,7 +403,7 @@ header .navbar a:hover {
 .game-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
     justify-content: center;
 }
 
@@ -369,56 +485,6 @@ body:not(:root) .back-to-top {
         transform: rotateX(360deg) rotateY(360deg);
     }
 }
-
-/* @media(max-width:600px) {
-    #menu-bar {
-        display: initial;
-        position: relative;
-        left: 300px;
-
-    }
-
-    header .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0%;
-        right: 0%;
-        background: linear-gradient(to bottom, #000428, #9acdfa);
-        border-top: .2rem solid #000;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-
-    }
-
-    header .active {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-
-    header .navbar a {
-        margin: 1rem;
-        padding: 1.5rem;
-        display: block;
-        border: .2rem solid rgba(0, 0, 0, .1);
-        border-left: .5rem solid var(--red);
-        background: black;
-    }
-
-    .sidebar {
-        position: absolute;
-        top: 120px;
-        width: 30px;
-    }
-
-    .games-section {
-        position: relative;
-        top: 100px;
-        left: -70px;
-    }
-
-}
-
-.right-hand-side-sections {
-    margin-left: 200px;
-} */
 
 
 
@@ -525,7 +591,7 @@ body:not(:root) .back-to-top {
         position: fixed;
         top: 100px;
         width: 30px;
-        z-index: 500;
+        z-index: 1000;
     }
 
     .games-section {
@@ -544,4 +610,5 @@ body:not(:root) .back-to-top {
     .games-section h2 {
         font-size: 20px;
     }
+
 }

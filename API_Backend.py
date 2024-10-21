@@ -13,18 +13,6 @@ CORS(baseApp, origins=["http://localhost:3000"])
 
 
 
-class Player:
-    def __init__(self):
-        self.userID = ""
-        self.username = ""
-        self.bearer = ""
-
-
-
-playersActive = {}
-
-
-
 def createNewUser(name, email, username, password):
     while True:
         userID = strGen.AlphaNumeric(50, 50)
