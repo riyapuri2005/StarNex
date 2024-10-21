@@ -1,9 +1,39 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
+import Cookies from "js-cookie";
 
 
 function Login() {
 
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('http://localhost:5000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({"UNAME":username, "PASSWORD":password}),
+            });
+
+            const result = await response.json();
+            if (result["STATUS"]>=0) {
+                console.log(result["BEARER"])
+                Cookies.set('BEARER', result["BEARER"], { expires: 30 });
+            } else {
+                console.error('Login failed:', result["REASON"]);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
     useEffect(() => {
+        Cookies.remove('BEARER');
+
         const link1 = document.createElement('link');
         link1.rel = "stylesheet";
         link1.href = "/css/auth.css";
@@ -26,22 +56,20 @@ function Login() {
 
     return (
       <div className="Login">
-
           <section id="spanGenerate"></section>
-
           <div className="container">
               <header>Sign In Form</header>
-              <form id="loginForm" noValidate>
+              <form id="loginForm" noValidate onSubmit={handleLogin}>
                   <div className="field email-field">
                       <div className="input-field">
-                          <input type="email" placeholder="Enter your email" id="email"/>
+                          <input type="username" placeholder="Username" id="username" onChange={(e) => setUsername(e.target.value)}/>
                           <span className="error" id="emailError">Please enter a valid email</span>
                       </div>
                   </div>
 
                   <div className="field create-password">
                       <div className="input-field">
-                          <input type="password" placeholder="Password" id="password"/>
+                          <input type="password" placeholder="Password" id="password" onChange={(e) => setPassword(e.target.value)}/>
                           <i id="peye" className="bx bx-hide show-hide" onClick={() => {
                               const inputField = document.getElementById("password");
                               const eye = document.getElementById("peye");
@@ -60,30 +88,9 @@ function Login() {
                       </div>
                   </div>
 
-                  <div className="field confirm-password">
-                      <div className="input-field">
-                          <input type="password" placeholder="Confirm Password" id="confirmPassword"/>
-                          <i id="cpeye" className="bx bx-hide show-hide" onClick={() => {
-                              const inputField = document.getElementById("confirmPassword");
-                              const eye = document.getElementById("cpeye");
-                              if (inputField.type === "password") {
-                                  inputField.type = "text";
-                                  eye.classList.remove("bx-hide");
-                                  eye.classList.add("bx-show");
-                              } else {
-                                  inputField.type = "password";
-                                  eye.classList.remove("bx-show");
-                                  eye.classList.add("bx-hide");
-                              }
-                          }
-                          }></i>
-                          <span className="error" id="confirmPasswordError">Passwords do not match</span>
-                      </div>
-                  </div>
-
                   <div className="links">
                       <a href="https://gmail.com/">Forgot Password</a>
-                      <a href="SignUp.html" target="_blank">Signup</a>
+                      <a href="/signup" target="_blank">Signup</a>
                   </div>
 
                   <div className="input-field button">

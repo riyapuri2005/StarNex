@@ -1,9 +1,44 @@
 import {Link} from "react-router-dom";
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
+import Cookies from 'js-cookie';
 
 
 function Signup() {
+
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+
+
+    const handleRegister = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('http://localhost:5000/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({"NAME":name, "EMAIL":email, "UNAME":username, "PASSWORD":password}),
+            });
+
+            const result = await response.json();
+            if (result["STATUS"]>=0) {
+                console.log(result["BEARER"])
+                Cookies.set('BEARER', result["BEARER"], { expires: 30 });
+            } else {
+                console.error('Signup failed:', result["REASON"]);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+
     useEffect(() => {
+        Cookies.remove('BEARER');
+
         const link1 = document.createElement('link');
         link1.rel = "stylesheet";
         link1.href = "/css/auth.css";
@@ -31,28 +66,28 @@ function Signup() {
 
             <div className="container">
                 <header>Sign Up Form</header>
-                <form id="signupForm" noValidate>
+                <form id="signupForm" noValidate onSubmit={handleRegister}>
                     <div className="field name-field">
                         <div className="input-field">
-                            <input type="text" placeholder="Enter your Name" className="name" id="name"/>
+                            <input type="text" placeholder="Enter your Name" className="name" id="name" onChange={(e) => setName(e.target.value)}/>
                             <span className="error" id="nameError"></span>
                         </div>
                     </div>
                     <div className="field username-field">
                         <div className="input-field">
-                            <input type="text" placeholder="Enter your Username" className="username" id="username"/>
+                            <input type="text" placeholder="Enter your Username" className="username" id="username" onChange={(e) => setUsername(e.target.value)}/>
                             <span className="error" id="usernameError"></span>
                         </div>
                     </div>
                     <div className="field email-field">
                         <div className="input-field">
-                            <input type="email" placeholder="Enter your email" className="email" id="email"/>
+                            <input type="email" placeholder="Enter your email" className="email" id="email" onChange={(e) => setEmail(e.target.value)}/>
                             <span className="error" id="emailError"></span>
                         </div>
                     </div>
                     <div className="field create-password">
                         <div className="input-field">
-                            <input type="password" placeholder="Password" className="password" id="password"/>
+                            <input type="password" placeholder="Password" className="password" id="password" onChange={(e) => setPassword(e.target.value)}/>
                             <i id="peye" className="bx bx-hide show-hide" onClick={() => {
                                 const inputField = document.getElementById("password");
                                 const eye = document.getElementById("peye");
