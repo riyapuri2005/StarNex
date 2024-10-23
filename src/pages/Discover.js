@@ -420,7 +420,7 @@ function Discover() {
 
             <section className="games-section" id="car">
                 <h2>Car Games</h2>
-                <div className="game-grid">
+                <div className="game-grid" id="grid_car">
                     <div className="game-item">
                         <img src="https://images.crazygames.com/sky-riders-buk_16x9/20240206045724/sky-riders-buk_16x9-cover?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=461" alt="Game 13"/>
                         <div className="game-info">
@@ -483,7 +483,7 @@ function Discover() {
 
             <section className="games-section" id="bike">
                 <h2>bike Games</h2>
-                <div className="game-grid" id="bike">
+                <div className="game-grid" id="grid_bike">
                     <div className="game-item">
                         <img src="https://images.crazygames.com/games/moto-x3m/cover_16x9-1700625476572.png?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=342" alt="Game 13"/>
                         <div className="game-info">
@@ -548,7 +548,7 @@ function Discover() {
 
             <section className="games-section" id="action">
                 <h2>Action Games</h2>
-                <div className="game-grid">
+                <div className="game-grid" id="grid_action">
                     <div className="game-item">
                         <img src="https://images.crazygames.com/stickman-supreme-duelist-2/20230314082715/stickman-supreme-duelist-2-cover?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=342" alt="Game 21"/>
                         <div className="game-info">
@@ -610,7 +610,7 @@ function Discover() {
             </section>
             <section className="games-section" id="adventure">
                 <h2>adventure Games</h2>
-                <div className="game-grid">
+                <div className="game-grid" id="grid_adventure">
                     <div className="game-item">
                         <img src="https://images.crazygames.com/el-dorado-lite_16x9/20240202061232/el-dorado-lite_16x9-cover?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=342" alt="Game 13"/>
                         <div className="game-info">
@@ -674,7 +674,7 @@ function Discover() {
             </section>
             <section className="games-section" id="card">
                 <h2>card Games</h2>
-                <div className="game-grid">
+                <div className="game-grid" id="grid_card">
                     <div className="game-item">
                         <img src="https://images.crazygames.com/kings-and-queens-solitaire-tripeaks_16x9/20240709032726/kings-and-queens-solitaire-tripeaks_16x9-cover?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=342" alt="Game 13"/>
                         <div className="game-info">
@@ -738,7 +738,7 @@ function Discover() {
             </section>
             <section className="games-section" id="controller">
                 <h2>controller Games</h2>
-                <div className="game-grid">
+                <div className="game-grid" id="grid_controller">
                     <div className="game-item">
                         <img src="https://images.crazygames.com/snake-lite-worm-snake-game_16x9/20231030060228/snake-lite-worm-snake-game_16x9-cover?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=342" alt="Game 13"/>
                         <div className="game-info">
@@ -802,7 +802,7 @@ function Discover() {
             </section>
             <section className="games-section" id="sports">
                 <h2>SPORTS GAMES</h2>
-                <div className="game-grid">
+                <div className="game-grid" id="grid_sports">
                     <div className="game-item">
                         <img src="https://images.crazygames.com/hoop-world-3d_16x9/20240418065301/hoop-world-3d_16x9-cover?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=461" alt="Game 13"/>
                         <div className="game-info">
@@ -866,7 +866,7 @@ function Discover() {
             </section>
             <section className="games-section" id="shooting">
                 <h2>shooting Games</h2>
-                <div className="game-grid">
+                <div className="game-grid" id="grid_shooting">
                     <div className="game-item">
                         <img src="https://images.crazygames.com/drunken-duel-2/20230221103853/drunken-duel-2-cover?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=342" alt="Game 13"/>
                         <div className="game-info">
@@ -930,7 +930,7 @@ function Discover() {
             </section>
             <section className="games-section" id="puzzle">
                 <h2>puzzle Games</h2>
-                <div className="game-grid">
+                <div className="game-grid" id="grid_puzzle">
                     <div className="game-item">
                         <img src="https://images.crazygames.com/blockbuster-puzzle_16x9/20240523094042/blockbuster-puzzle_16x9-cover?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=461" alt="Game 13"/>
                         <div className="game-info">
@@ -991,7 +991,7 @@ function Discover() {
             </section>
             <section className="games-section" id=".io">
                 <h2>.io Games</h2>
-                <div className="game-grid">
+                <div className="game-grid" id="grid_io">
                     <div className="game-item">
                         <img src="https://images.crazygames.com/paper-io-2/20230505085019/paper-io-2-cover?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=344" alt="Game 13"/>
                         <div className="game-info">

@@ -6,10 +6,19 @@
   font-family: "Poppins", sans-serif;
 }
 
-body {
+.flexbox{
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
   min-height: 100vh;
   background: #000;
 }
@@ -46,7 +55,6 @@ section::before {
 
 section span {
   position: relative;
-  display: block;
   width: calc(6.25vw - 2px);
   height: calc(6.25vw - 2px);
   background: #181818;
@@ -60,6 +68,7 @@ section span:hover {
 }
 
 .container {
+  align-self: center;
   position: absolute;
   max-width: 380px;
   width: 100%;
