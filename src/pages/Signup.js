@@ -40,19 +40,25 @@ function Signup() {
         const passwordInput = document.getElementById('password');
         const confirmPasswordInput = document.getElementById('confirmPassword');
 
+        const nameError = document.getElementById('nameError');
+        const usernameError = document.getElementById('usernameError');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+        const confirmPasswordError = document.getElementById('confirmPasswordError');
+
 
         if (name.trim() === '') {
             showError(nameInput, 'Name is required');
             isValid = false;
         } else {
-            clearError(nameInput);
+            clearError(nameInput, nameError);
         }
 
         if (username.trim() === '') {
             showError(usernameInput, 'Username is required');
             isValid = false;
         } else {
-            clearError(usernameInput);
+            clearError(usernameInput, usernameError);
         }
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -60,21 +66,21 @@ function Signup() {
             showError(emailInput, 'Enter a valid email address');
             isValid = false;
         } else {
-            clearError(emailInput);
+            clearError(emailInput, emailError);
         }
 
         if (password.trim().length < 8) {
             showError(passwordInput, 'Password must be at least 8 characters');
             isValid = false;
         } else {
-            clearError(passwordInput);
+            clearError(passwordInput, passwordError);
         }
 
         if (password !== confPassword) {
             showError(confirmPasswordInput, 'Passwords do not match');
             isValid = false;
         } else {
-            clearError(confirmPasswordInput);
+            clearError(confirmPasswordInput, confirmPasswordError);
         }
 
         if (isValid) {
@@ -159,7 +165,7 @@ function Signup() {
                     </div>
                     <div className="field confirm-password">
                         <div className="input-field">
-                            <input type="password" placeholder="Confirm Password" className="cPassword" id="confirmPassword"/>
+                            <input type="password" placeholder="Confirm Password" className="cPassword" id="confirmPassword" onChange={(e) => setConfPassword(e.target.value)}/>
                             <i id="cpeye" className="bx bx-hide show-hide" onClick={() => {
                                 const inputField = document.getElementById("confirmPassword");
                                 const eye = document.getElementById("cpeye");
