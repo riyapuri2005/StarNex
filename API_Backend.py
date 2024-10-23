@@ -11,23 +11,43 @@ baseApp = Flask(__name__)
 CORS(baseApp, origins=["http://localhost:3000"])
 
 
-knownGames = [
-    {
-        "TITLE":"",
-        "DESC":"",
-        "IMG":"",
-    },
-    {
-        "TITLE":"",
-        "DESC":"",
-        "IMG":"",
-    },
-    {
-        "TITLE":"",
-        "DESC":"",
-        "IMG":"",
-    },
-]
+knownGames = {
+    "grid_recent":[
+        {
+            "TITLE": "Game1",
+            "DESC": "Desc1",
+            "IMG": "",
+        },
+        {
+            "TITLE": "Game2",
+            "DESC": "Desc2",
+            "IMG": "",
+        },
+        {
+            "TITLE": "Game3",
+            "DESC": "Desc3",
+            "IMG": "",
+        }
+    ],
+
+    "grid_recommended": [
+        {
+            "TITLE": "Game1",
+            "DESC": "Desc1",
+            "IMG": "",
+        },
+        {
+            "TITLE": "Game2",
+            "DESC": "Desc2",
+            "IMG": "",
+        },
+        {
+            "TITLE": "Game3",
+            "DESC": "Desc3",
+            "IMG": "",
+        }
+    ],
+}
 
 
 def createNewUser(name, email, username, password):
@@ -79,6 +99,11 @@ def forceCheckAuth(userID, deviceID):
     response = {"STATUS":0}
     print(response)
     return response
+
+
+@baseApp.route("/discover", methods=["POST"])
+def discoverRoute(userID, deviceID):
+    return knownGames
 
 
 @baseApp.route("/signup", methods=["POST"])

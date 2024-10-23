@@ -36,7 +36,6 @@ function Login() {
         const serverError = document.getElementById('serverError');
 
 
-
         if (password.trim().length < 8) {
             showError(passwordInput, passwordError, 'Password must be at least 8 characters');
             isValid = false;

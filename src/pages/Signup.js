@@ -175,8 +175,7 @@ function Signup() {
                     </div>
                     <div className="field confirm-password">
                         <div className="input-field">
-                            <input type="password" placeholder="Confirm Password" className="confirmPasswordInput"
-                                   id="confirmPassword" onChange={(e) => setConfPassword(e.target.value)}/>
+                            <input type="password" placeholder="Confirm Password" className="confirmPassword" id="confirmPasswordInput" onChange={(e) => setConfPassword(e.target.value)}/>
                             <i id="cpeye" className="bx bx-hide show-hide" onClick={() => {
                                 const inputField = document.getElementById("confirmPasswordInput");
                                 const eye = document.getElementById("cpeye");
