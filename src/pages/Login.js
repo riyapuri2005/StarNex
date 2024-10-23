@@ -118,7 +118,7 @@ function Login() {
 
                         <div className="links">
                             <a href="https://gmail.com/">Forgot Password</a>
-                            <a href="/signup" target="_blank">Signup</a>
+                            <a href="/signup">Signup</a>
                         </div>
 
                         <div className="input-field button">

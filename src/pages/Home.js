@@ -61,7 +61,7 @@ function Home() {
                    className="parallax"/>
               <h6 id="text2" className="LevelUp"> LEVEL UP </h6>
               <h2 id="text1" className="TheStars"> THE STARS </h2>
-              <Link to="/game" id="btn" target="_blank" style={{textAlign: 'center'}}> PLAY NOW </Link>
+              <Link to="/game" id="btn" style={{textAlign: 'center'}}> PLAY NOW </Link>
               <img src="/image/1Front.png" style={{height: '100%', width: '100%'}} id="mountains_front"
                    className="parallax"/>
           </section>
@@ -69,7 +69,7 @@ function Home() {
           <img src="/image/2astronaut.png" id="astronaut" className="parallax right-bottom-image"/>
 
           <div className="chatbot-icon">
-              <Link to="/iris" target="_blank"> <img src="/image/IRIS.png" alt="Chatbot"/> </Link>
+              <Link to="/iris"> <img src="/image/IRIS.png" alt="Chatbot"/> </Link>
           </div>
 
 
@@ -125,26 +125,26 @@ function Home() {
                   <div className="footer-content">
                       <h3>Quick Links</h3>
                       <ul className="list">
-                          <li><Link to="/signUp" target="_blank"></Link>Register</li>
-                          <li><Link to="/discover" target="_blank">Discover</Link></li>
-                          <li><Link to="/iris" target="_blank">IrisAI</Link></li>
-                          <li><Link to="/feedback" target="_blank">Feedback</Link></li>
-                          <li><Link to="./https://mail.google.com/mail/u/0/#inbox" target="_blank">Contact</Link></li>
+                          <li><Link to="/signUp"></Link>Register</li>
+                          <li><Link to="/discover">Discover</Link></li>
+                          <li><Link to="/iris">IrisAI</Link></li>
+                          <li><Link to="/feedback">Feedback</Link></li>
+                          <li><Link to="./https://mail.google.com/mail/u/0/#inbox">Contact</Link></li>
                       </ul>
                   </div>
                   <div className="footer-content">
                       <h3>Follow Us</h3>
                       <ul className="social-icons">
-                          <li><Link to="https://www.facebook.com/" target="_blank"><img
+                          <li><Link to="https://www.facebook.com/"><img
                               src="/image/facebook-icon-png-4.png" alt="Facebook"
                               style={{height: '30px', width: '30px'}}/></Link></li>
-                          <li><Link to="https://twitter.com/login" target="_blank"><img
+                          <li><Link to="https://twitter.com/login"><img
                               src="/image/twitter-clipart.png" alt="x"
                               style={{height: '28px', width: '30px'}}/></Link></li>
-                          <li><Link to="https://www.instagram.com/" target="_blank"><img
+                          <li><Link to="https://www.instagram.com/"><img
                               src="/image/instagram-new.png"
                               alt="instagram" style={{height: '30px', width: '30px'}}/></Link></li>
-                          <li><Link to="https://www.youtube.com/" target="_blank"><img
+                          <li><Link to="https://www.youtube.com/"><img
                               src="/image/youtube-app-white-icon.png"
                               alt="yt" style={{height: '30px', width: '30px'}}/></Link></li>
                       </ul>

@@ -197,7 +197,7 @@ function Signup() {
                     </div>
                     <div className="links">
                         <Link to="https://gmail.com/">Forgot Password</Link>
-                        <Link to="/login" target="_blank">Login</Link>
+                        <Link to="/login">Login</Link>
                     </div>
                     <div className="input-field button">
                         <input type="submit" value="Signup Now"/>
