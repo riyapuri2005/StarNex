@@ -1,6 +1,4 @@
 from functools import wraps
-from random import shuffle
-
 from flask import Flask, request
 from flask_cors import CORS
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -42,7 +40,7 @@ def loginRequired(continueFunction):
         userID = None
         deviceID = None
         if bearer:
-            received = SQLConn.execute(f"SELECT userID, deviceID from plauerdevices where bearer=\"{bearer}\"")
+            received = SQLConn.execute(f"SELECT userID, deviceID from playerdevices where bearer=\"{bearer}\"")
             if received:
                 received = received[0]
                 userID = received["userID"].decode()
@@ -57,24 +55,12 @@ def loginRequired(continueFunction):
 
 
 
-@baseApp.route("/chechauth", methods=["POST"])
+@baseApp.route("/checkauth", methods=["POST"])
 @loginRequired
 def forceCheckAuth(userID, deviceID):
     response = {"STATUS":0}
     print(response)
     return response
-
-
-@baseApp.route("/discover", methods=["POST"])
-@loginRequired
-def discoverRoute(userID, deviceID):
-    count = 5
-    availableGames = SQLConn.execute("SELECT gameID, title from availablegames")
-    shuffle(availableGames)
-    response = availableGames[:min(count, len(availableGames))]
-    print(response)
-    return response
-
 
 
 @baseApp.route("/signup", methods=["POST"])

@@ -1,25 +1,12 @@
 import Cookies from "js-cookie";
 import {Link, useNavigate} from "react-router-dom";
-import {useEffect} from "react";
 import addJS from "../elements/AddJS";
 import addCSS from "../elements/AddCSS";
 import checkAuth from "../elements/CheckAuth";
 
 
 function Home() {
-    const navigate = useNavigate();
-
-    useEffect(async () => {
-        const Bearer = Cookies.get('BEARER');
-        if (await checkAuth(Bearer)) {
-            addJS("/js/home.js");
-            addCSS("/css/home.css");
-        } else {
-            navigate("/login")
-        }
-    }, []);
-
-  return (
+    let toRender = (
       <div className="Home" style={{backgroundColor: "black"}}>
 
           <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-expand-xs fixed-top">
@@ -151,7 +138,21 @@ function Home() {
               </div>
           </footer>
       </div>
-  );
+)
+
+
+
+    const navigate = useNavigate();
+    let Bearer = Cookies.get('BEARER');
+    checkAuth(Bearer).then(isCorrect => {
+        if (isCorrect)
+        {
+            addJS("/js/home.js");
+            addCSS("/css/home.css");
+            return toRender;
+        }
+        else { navigate("/login"); }
+    })
 }
 
 export default Home;

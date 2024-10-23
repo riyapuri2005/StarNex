@@ -48,14 +48,14 @@ function Signup() {
 
 
         if (name.trim() === '') {
-            showError(nameInput, 'Name is required');
+            showError(nameInput, nameInput, 'Name is required');
             isValid = false;
         } else {
             clearError(nameInput, nameError);
         }
 
         if (username.trim() === '') {
-            showError(usernameInput, 'Username is required');
+            showError(usernameInput, usernameInput, 'Username is required');
             isValid = false;
         } else {
             clearError(usernameInput, usernameError);
@@ -63,21 +63,21 @@ function Signup() {
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email.trim())) {
-            showError(emailInput, 'Enter a valid email address');
+            showError(emailInput, emailInput, 'Enter a valid email address');
             isValid = false;
         } else {
             clearError(emailInput, emailError);
         }
 
         if (password.trim().length < 8) {
-            showError(passwordInput, 'Password must be at least 8 characters');
+            showError(passwordInput, passwordInput, 'Password must be at least 8 characters');
             isValid = false;
         } else {
             clearError(passwordInput, passwordError);
         }
 
         if (password !== confPassword) {
-            showError(confirmPasswordInput, 'Passwords do not match');
+            showError(confirmPasswordInput, confirmPasswordInput, 'Passwords do not match');
             isValid = false;
         } else {
             clearError(confirmPasswordInput, confirmPasswordError);
