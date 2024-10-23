@@ -47,11 +47,22 @@ def loginRequired(continueFunction):
                 received = received[0]
                 userID = received["userID"].decode()
                 deviceID = received["deviceID"].decode()
-        if userID and deviceID: return continueFunction(userID, deviceID)
+        if userID and deviceID:
+            response = continueFunction(userID, deviceID)
+            print(response)
+            return response
         else:
             return {"STATUS":-1, "REASON":"AUTH REQUIRED"}
     return wrapper
 
+
+
+@baseApp.route("/chechauth", methods=["POST"])
+@loginRequired
+def forceCheckAuth(userID, deviceID):
+    response = {"STATUS":0}
+    print(response)
+    return response
 
 
 @baseApp.route("/discover", methods=["POST"])
@@ -63,7 +74,7 @@ def discoverRoute(userID, deviceID):
     response = availableGames[:min(count, len(availableGames))]
     print(response)
     return response
-        
+
 
 
 @baseApp.route("/signup", methods=["POST"])
