@@ -1,17 +1,17 @@
 import {useEffect} from "react";
-import Cookies from "js-cookie";
 import addCSS from "../elements/AddCSS";
+import addJS from "../elements/AddJS";
+import { HashLink } from "react-router-hash-link";
 
 
 function Discover() {
 
     useEffect(() => {
-        addCSS("/css/auth.css");
+        addCSS("/css/discover.css");
         addCSS("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
+        addCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+        addJS("/js/discover.js");
     }, []);
-
-
-
 
     return (
         <div className="Discover">
@@ -33,16 +33,16 @@ function Discover() {
             <div className="sidebar">
                 <ul>
                     <li>
-                        <a href="">
+                        <HashLink smooth to="#recent">
                             <i className="fa fa-fw fa-gamepad"></i>
                             <span>Recent Games</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
-                        <a href="#">
+                        <HashLink smooth to="#recommended">
                             <i className="fa fa-fw fa-trophy"></i>
                             <span>Recommended</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
                         <a href="">
@@ -122,10 +122,10 @@ function Discover() {
             <div className="sidebar">
                 <ul>
                     <li>
-                        <a href="#recent">
+                        <HashLink smooth to="#recent">
                             <i className="fa fa-fw fa-gamepad"></i>
                             <span>Recent Games</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
                         <a href="">
@@ -141,78 +141,78 @@ function Discover() {
                     </li>
 
                     <li>
-                        <a href="#car">
+                        <HashLink smooth to="#car">
                             <i className="fa fa-fw fa-car"></i>
                             <span>Car Games</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
-                        <a href="#bike">
+                        <HashLink smooth to="#bike">
                             <i className="fa fa-fw fa-motorcycle"></i>
                             <span>Bike Games</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
-                        <a href="#action">
+                        <HashLink smooth to="#action">
                             <i className="fa fa-fw fa-fist-raised"></i>
                             <span>Action Games</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
-                        <a href="#adventure">
+                        <HashLink smooth to="#adventure">
                             <i className="fa fa-fw fa-hiking"></i>
                             <span>Adventure Games</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
-                        <a href="#card">
+                        <HashLink smooth to="#card">
                             <i className="fa fa-fw fa-id-card"></i>
                             <span>Card Games</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
-                        <a href="#controller">
+                        <HashLink smooth to="#controller">
                             <i className="fa fa-fw fa-gamepad"></i>
                             <span>Controller Games</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
-                        <a href="#sports">
+                        <HashLink smooth to="#sports">
                             <i className="fa fa-fw fa-futbol"></i>
                             <span>Sports Games</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
-                        <a href="#shooting">
+                        <HashLink smooth to="#shooting">
                             <i className="fa fa-fw fa-crosshairs"></i>
                             <span>Shooting Games</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
-                        <a href="#puzzle">
+                        <HashLink smooth to="#puzzle">
                             <i className="fa fa-fw fa-puzzle-piece"></i>
                             <span>Puzzle Games</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
-                        <a href="#.io">
+                        <HashLink smooth to="#.io">
                             <i className="fa fa-fw fa-star"></i>
                             <span>.io</span>
-                        </a>
+                        </HashLink>
                     </li>
 
 
                     <li>
-                        <a href="#horror">
+                        <HashLink smooth to="#horror">
                             <i className="fa fa-fw fa-ghost"></i>
                             <span>horror games</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
-                        <a href="#escape">
+                        <HashLink smooth to="#escape">
                             <i className="fas fa-key"></i>
                             <span>Escape Games</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
                         <a href="#">
@@ -1183,14 +1183,11 @@ function Discover() {
             </section>
 
 
-            <a href="#top" className="back-to-top">
+            <HashLink smooth to="#puzzle" className="back-to-top">
                 <i className="fas fa-chevron-up"></i>
-            </a>
+            </HashLink>
 
             <div id="top"></div>
-
-
-            <script src="./public/js/discover.js"></script>
 
         </div>
     );
