@@ -17,6 +17,10 @@
   box-sizing: border-box;
 }
 
+#serverError{
+  font-size: 20px;
+}
+
 body {
   display: flex;
   min-height: 100vh;
