@@ -3,12 +3,27 @@ import {Link, useNavigate} from "react-router-dom";
 import addJS from "../elements/AddJS";
 import addCSS from "../elements/AddCSS";
 import checkAuth from "../elements/CheckAuth";
+import {useEffect, useState} from "react";
 
 
 function Home() {
-    let toRender = (
-      <div className="Home" style={{backgroundColor: "black"}}>
+    const [toRender, CtoRender] = useState("")
+    const navigate = useNavigate();
 
+    useEffect(() => {
+        let Bearer = Cookies.get('BEARER');
+        checkAuth(Bearer).then(isCorrect => {
+            if (isCorrect) { console.log("AUTH CORRECT");
+                CtoRender(toReturn);
+                addCSS("/css/home.css");
+                addJS("/js/home.js");
+            }
+            else { navigate("/login"); }
+        })
+    }, []);
+
+
+    let toReturn = (<div className="Home" style={{backgroundColor: "black"}}>
           <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-expand-xs fixed-top">
               <div className="container-fluid ">
                   <Link className="navbar-brand" to="#">
@@ -137,22 +152,8 @@ function Home() {
                   <p>&copy; 2024 STARNEX . All rights reserved</p>
               </div>
           </footer>
-      </div>
-)
-
-
-
-    const navigate = useNavigate();
-    let Bearer = Cookies.get('BEARER');
-    checkAuth(Bearer).then(isCorrect => {
-        if (isCorrect)
-        {
-            addJS("/js/home.js");
-            addCSS("/css/home.css");
-            return toRender;
-        }
-        else { navigate("/login"); }
-    })
+      </div>)
+    return toRender;
 }
 
 export default Home;

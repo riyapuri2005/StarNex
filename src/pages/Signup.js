@@ -19,13 +19,13 @@ function Signup() {
     function showError(input, errorElement, message) {
         errorElement.textContent = message;
         errorElement.style.display = 'block';
-        input.classList.add('error-border');
+        if (input !== null) input.classList.add('error-border');
     }
 
     // Clear error message and remove red border
     function clearError(input, errorElement) {
         errorElement.style.display = 'none';
-        input.classList.remove('error-border');
+        if (input !== null) input.classList.remove('error-border');
     }
 
 
@@ -34,10 +34,10 @@ function Signup() {
 
         let isValid = true;
 
-        const nameInput = document.getElementById('name');
-        const usernameInput = document.getElementById('username');
-        const emailInput = document.getElementById('email');
-        const passwordInput = document.getElementById('password');
+        const nameInput = document.getElementById('nameInput');
+        const usernameInput = document.getElementById('usernameInput');
+        const emailInput = document.getElementById('emailInput');
+        const passwordInput = document.getElementById('passwordInput');
         const confirmPasswordInput = document.getElementById('confirmPassword');
 
         const nameError = document.getElementById('nameError');
@@ -45,17 +45,19 @@ function Signup() {
         const emailError = document.getElementById('emailError');
         const passwordError = document.getElementById('passwordError');
         const confirmPasswordError = document.getElementById('confirmPasswordError');
+        const serverError = document.getElementById('serverError');
 
 
         if (name.trim() === '') {
-            showError(nameInput, nameInput, 'Name is required');
+            showError(nameInput, nameError, 'Name is required');
             isValid = false;
         } else {
             clearError(nameInput, nameError);
+            clearError(null, serverError);
         }
 
         if (username.trim() === '') {
-            showError(usernameInput, usernameInput, 'Username is required');
+            showError(usernameInput, usernameError, 'Username is required');
             isValid = false;
         } else {
             clearError(usernameInput, usernameError);
@@ -63,21 +65,21 @@ function Signup() {
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email.trim())) {
-            showError(emailInput, emailInput, 'Enter a valid email address');
+            showError(emailInput, emailError, 'Enter a valid email address');
             isValid = false;
         } else {
             clearError(emailInput, emailError);
         }
 
         if (password.trim().length < 8) {
-            showError(passwordInput, passwordInput, 'Password must be at least 8 characters');
+            showError(passwordInput, passwordError, 'Password must be at least 8 characters');
             isValid = false;
         } else {
             clearError(passwordInput, passwordError);
         }
 
         if (password !== confPassword) {
-            showError(confirmPasswordInput, confirmPasswordInput, 'Passwords do not match');
+            showError(confirmPasswordInput, confirmPasswordError, 'Passwords do not match');
             isValid = false;
         } else {
             clearError(confirmPasswordInput, confirmPasswordError);
@@ -98,6 +100,7 @@ function Signup() {
                     Cookies.set('BEARER', result["BEARER"], {expires: 30});
                     navigate("/home");
                 } else {
+                    showError(null, serverError, result["REASON"]);
                     console.error('Signup failed:', result["REASON"]);
                 }
             } catch (error) {
@@ -128,31 +131,31 @@ function Signup() {
                     <span className="error" id="serverError"></span>
                     <div className="field name-field">
                         <div className="input-field">
-                            <input type="text" placeholder="Enter your Name" className="name" id="name"
+                            <input type="text" placeholder="Enter your Name" className="name" id="nameInput"
                                    onChange={(e) => setName(e.target.value)}/>
                             <span className="error" id="nameError"></span>
                         </div>
                     </div>
                     <div className="field username-field">
                         <div className="input-field">
-                            <input type="text" placeholder="Enter your Username" className="username" id="username"
+                            <input type="text" placeholder="Enter your Username" className="username" id="usernameInput"
                                    onChange={(e) => setUsername(e.target.value)}/>
                             <span className="error" id="usernameError"></span>
                         </div>
                     </div>
                     <div className="field email-field">
                         <div className="input-field">
-                            <input type="email" placeholder="Enter your email" className="email" id="email"
+                            <input type="email" placeholder="Enter your email" className="email" id="emailInput"
                                    onChange={(e) => setEmail(e.target.value)}/>
                             <span className="error" id="emailError"></span>
                         </div>
                     </div>
                     <div className="field create-password">
                         <div className="input-field">
-                            <input type="password" placeholder="Password" className="password" id="password"
+                            <input type="password" placeholder="Password" className="password" id="passwordInput"
                                    onChange={(e) => setPassword(e.target.value)}/>
                             <i id="peye" className="bx bx-hide show-hide" onClick={() => {
-                                const inputField = document.getElementById("password");
+                                const inputField = document.getElementById("passwordInput");
                                 const eye = document.getElementById("peye");
                                 if (inputField.type === "password") {
                                     inputField.type = "text";
@@ -170,10 +173,10 @@ function Signup() {
                     </div>
                     <div className="field confirm-password">
                         <div className="input-field">
-                            <input type="password" placeholder="Confirm Password" className="cPassword"
+                            <input type="password" placeholder="Confirm Password" className="confirmPasswordInput"
                                    id="confirmPassword" onChange={(e) => setConfPassword(e.target.value)}/>
                             <i id="cpeye" className="bx bx-hide show-hide" onClick={() => {
-                                const inputField = document.getElementById("confirmPassword");
+                                const inputField = document.getElementById("confirmPasswordInput");
                                 const eye = document.getElementById("cpeye");
                                 if (inputField.type === "password") {
                                     inputField.type = "text";
