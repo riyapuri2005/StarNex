@@ -109,8 +109,8 @@ function Signup() {
 
     useEffect(() => {
         Cookies.remove('BEARER');
-        addCSS("/css/auth.css");
-        addCSS("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
+        addCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+        addCSS("/css/discover.css");
         for(let i=0; i<=271;i++) { document.getElementById("spanGenerate").appendChild(document.createElement("span")) }
     }, []);
 
