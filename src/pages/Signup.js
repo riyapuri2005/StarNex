@@ -110,7 +110,7 @@ function Signup() {
     useEffect(() => {
         Cookies.remove('BEARER');
         addCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
-        addCSS("/css/discover.css");
+        addCSS("/css/auth.css");
         for(let i=0; i<=271;i++) { document.getElementById("spanGenerate").appendChild(document.createElement("span")) }
     }, []);
 
@@ -125,27 +125,32 @@ function Signup() {
             <div className="container">
                 <header>Sign Up Form</header>
                 <form id="signupForm" noValidate onSubmit={handleRegister}>
+                    <span className="error" id="serverError"></span>
                     <div className="field name-field">
                         <div className="input-field">
-                            <input type="text" placeholder="Enter your Name" className="name" id="name" onChange={(e) => setName(e.target.value)}/>
+                            <input type="text" placeholder="Enter your Name" className="name" id="name"
+                                   onChange={(e) => setName(e.target.value)}/>
                             <span className="error" id="nameError"></span>
                         </div>
                     </div>
                     <div className="field username-field">
                         <div className="input-field">
-                            <input type="text" placeholder="Enter your Username" className="username" id="username" onChange={(e) => setUsername(e.target.value)}/>
+                            <input type="text" placeholder="Enter your Username" className="username" id="username"
+                                   onChange={(e) => setUsername(e.target.value)}/>
                             <span className="error" id="usernameError"></span>
                         </div>
                     </div>
                     <div className="field email-field">
                         <div className="input-field">
-                            <input type="email" placeholder="Enter your email" className="email" id="email" onChange={(e) => setEmail(e.target.value)}/>
+                            <input type="email" placeholder="Enter your email" className="email" id="email"
+                                   onChange={(e) => setEmail(e.target.value)}/>
                             <span className="error" id="emailError"></span>
                         </div>
                     </div>
                     <div className="field create-password">
                         <div className="input-field">
-                            <input type="password" placeholder="Password" className="password" id="password" onChange={(e) => setPassword(e.target.value)}/>
+                            <input type="password" placeholder="Password" className="password" id="password"
+                                   onChange={(e) => setPassword(e.target.value)}/>
                             <i id="peye" className="bx bx-hide show-hide" onClick={() => {
                                 const inputField = document.getElementById("password");
                                 const eye = document.getElementById("peye");
@@ -165,20 +170,21 @@ function Signup() {
                     </div>
                     <div className="field confirm-password">
                         <div className="input-field">
-                            <input type="password" placeholder="Confirm Password" className="cPassword" id="confirmPassword" onChange={(e) => setConfPassword(e.target.value)}/>
+                            <input type="password" placeholder="Confirm Password" className="cPassword"
+                                   id="confirmPassword" onChange={(e) => setConfPassword(e.target.value)}/>
                             <i id="cpeye" className="bx bx-hide show-hide" onClick={() => {
                                 const inputField = document.getElementById("confirmPassword");
                                 const eye = document.getElementById("cpeye");
-                                    if (inputField.type === "password") {
-                                        inputField.type = "text";
-                                        eye.classList.remove("bx-hide");
-                                        eye.classList.add("bx-show");
-                                    } else {
-                                        inputField.type = "password";
-                                        eye.classList.remove("bx-show");
-                                        eye.classList.add("bx-hide");
-                                    }
+                                if (inputField.type === "password") {
+                                    inputField.type = "text";
+                                    eye.classList.remove("bx-hide");
+                                    eye.classList.add("bx-show");
+                                } else {
+                                    inputField.type = "password";
+                                    eye.classList.remove("bx-show");
+                                    eye.classList.add("bx-hide");
                                 }
+                            }
                             }></i>
                             <span className="error" id="confirmPasswordError"></span>
                         </div>

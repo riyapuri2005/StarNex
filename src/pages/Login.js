@@ -81,16 +81,19 @@ function Login() {
           <div className="container">
               <header>Sign In Form</header>
               <form id="loginForm" noValidate onSubmit={handleLogin}>
+                  <span className="error" id="serverError"></span>
                   <div className="field email-field">
                       <div className="input-field">
-                          <input type="username" placeholder="Username" id="username" onChange={(e) => setUsername(e.target.value)}/>
+                          <input type="username" placeholder="Username" id="username"
+                                 onChange={(e) => setUsername(e.target.value)}/>
                           <span className="error" id="usernameError">Please enter a valid email</span>
                       </div>
                   </div>
 
                   <div className="field create-password">
                       <div className="input-field">
-                          <input type="password" placeholder="Password" id="password" onChange={(e) => setPassword(e.target.value)}/>
+                          <input type="password" placeholder="Password" id="password"
+                                 onChange={(e) => setPassword(e.target.value)}/>
                           <i id="peye" className="bx bx-hide show-hide" onClick={() => {
                               const inputField = document.getElementById("password");
                               const eye = document.getElementById("peye");
