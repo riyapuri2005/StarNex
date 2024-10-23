@@ -226,7 +226,7 @@ function Discover() {
 
             <section className="games-section" id="recent">
                 <h2>Recently Played</h2>
-                <div className="game-grid">
+                <div className="game-grid" id="grid_recent">
                     <div className="game-item">
 
                         <img src="https://images.crazygames.com/fashion-famous_16x9/20240227083828/fashion-famous_16x9-cover?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=461" alt="Game 1"/>
@@ -294,7 +294,7 @@ function Discover() {
 
             <section className="games-section" id="recommended">
                 <h2>Recommended</h2>
-                <div className="game-grid">
+                <div className="game-grid" id="grid_recommended">
                     <div className="game-item">
                         <img src="https://images.crazygames.com/smash-karts_16x9/20240116074535/smash-karts_16x9-cover?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=344" alt="Game 5"/>
                         <div className="game-info">
@@ -357,7 +357,7 @@ function Discover() {
 
             <section className="games-section" id="beauty">
                 <h2>Beauty Games</h2>
-                <div className="game-grid">
+                <div className="game-grid" id="grid_beauty">
                     <div className="game-item">
                         <img src="https://images.crazygames.com/bffs-k-pop-fangirls_16x9/20240425062730/bffs-k-pop-fangirls_16x9-cover?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=342" alt="Game 9"/>
                         <div className="game-info">
@@ -483,7 +483,7 @@ function Discover() {
 
             <section className="games-section" id="bike">
                 <h2>bike Games</h2>
-                <div className="game-grid">
+                <div className="game-grid" id="bike">
                     <div className="game-item">
                         <img src="https://images.crazygames.com/games/moto-x3m/cover_16x9-1700625476572.png?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=342" alt="Game 13"/>
                         <div className="game-info">
@@ -1055,7 +1055,7 @@ function Discover() {
             </section>
             <section className="games-section" id="horror">
                 <h2>horror Games</h2>
-                <div className="game-grid">
+                <div className="game-grid" id="grid_horror">
                     <div className="game-item">
                         <img src="https://images.crazygames.com/exhibit-of-sorrows/20220426111642/exhibit-of-sorrows-cover?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=344" alt="Game 13"/>
                         <div className="game-info">
@@ -1119,7 +1119,7 @@ function Discover() {
             </section>
             <section className="games-section" id="escape">
                 <h2> escape Games</h2>
-                <div className="game-grid">
+                <div className="game-grid" id="grid_escape">
                     <div className="game-item">
                         <img src="https://images.crazygames.com/escape-from-prison-multiplayer_16x9/20240712090255/escape-from-prison-multiplayer_16x9-cover?auto=format%2Ccompress&q=75&cs=strip&ch=DPR&w=342" alt="Game 13"/>
                         <div className="game-info">
