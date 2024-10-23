@@ -292,7 +292,7 @@ function Discover() {
                 </div>
             </section>
 
-            <section className="games-section" id="Recommended">
+            <section className="games-section" id="recommended">
                 <h2>Recommended</h2>
                 <div className="game-grid">
                     <div className="game-item">
@@ -1183,7 +1183,7 @@ function Discover() {
             </section>
 
 
-            <HashLink smooth to="#puzzle" className="back-to-top">
+            <HashLink smooth to="#top" className="back-to-top">
                 <i className="fas fa-chevron-up"></i>
             </HashLink>
 
