@@ -1,13 +1,22 @@
-import {Link} from "react-router-dom";
+import Cookies from "js-cookie";
+import {Link, useNavigate} from "react-router-dom";
 import {useEffect} from "react";
 import addJS from "../elements/AddJS";
 import addCSS from "../elements/AddCSS";
+import checkAuth from "../elements/CheckAuth";
 
 
 function Home() {
-    useEffect(() => {
-        addJS("/js/home.js");
-        addCSS("/css/home.css");
+    const navigate = useNavigate();
+
+    useEffect(async () => {
+        const Bearer = Cookies.get('BEARER');
+        if (await checkAuth(Bearer)) {
+            addJS("/js/home.js");
+            addCSS("/css/home.css");
+        } else {
+            navigate("/login")
+        }
     }, []);
 
   return (
