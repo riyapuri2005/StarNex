@@ -1,6 +1,6 @@
 function addJS(URL){
     const existingLink = document.querySelector("script[src='"+URL+"']")
-    if (!existingLink) { document.head.removeChild(existingLink); }
+    if (existingLink) { existingLink.remove(); }
 }
 
 export default addJS;
