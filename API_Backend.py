@@ -1,4 +1,5 @@
 from functools import wraps
+from random import shuffle
 
 from flask import Flask, request
 from flask_cors import CORS
@@ -33,6 +34,7 @@ def createNewDevice(userID):
         return bearer
 
 
+
 def loginRequired(continueFunction):
     @wraps(continueFunction)
     def wrapper():
@@ -47,9 +49,21 @@ def loginRequired(continueFunction):
                 deviceID = received["deviceID"].decode()
         if userID and deviceID: return continueFunction(userID, deviceID)
         else:
-            return {"STATUS":-1, "REASON":"INVALID AUTH"}
+            return {"STATUS":-1, "REASON":"AUTH REQUIRED"}
     return wrapper
 
+
+
+@baseApp.route("/discover", methods=["POST"])
+@loginRequired
+def discoverRoute(userID, deviceID):
+    count = 5
+    availableGames = SQLConn.execute("SELECT gameID, title from availablegames")
+    shuffle(availableGames)
+    response = availableGames[:min(count, len(availableGames))]
+    print(response)
+    return response
+        
 
 
 @baseApp.route("/signup", methods=["POST"])
@@ -86,11 +100,16 @@ def loginRoute():
         if received:
             received = received[0]
             userID = received["userID"].decode()
-            bearer = createNewDevice(userID)
-            response = {"STATUS":0, "BEARER":bearer}
+            pwHash = received["pwHash"].decode()
+            if check_password_hash(pwHash, password):
+                bearer = createNewDevice(userID)
+                response = {"STATUS":0, "BEARER":bearer}
+            else:
+                response = {"STATUS":-1, "BEARER":"PASSWORD INVALID"}
         else: response = {"STATUS":-1, "REASON":"CREDENTIALS INVALID"}
     print(response)
     return response
+
 
 
 baseApp.run("0.0.0.0", 5000)

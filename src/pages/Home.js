@@ -1,19 +1,13 @@
 import {Link} from "react-router-dom";
 import {useEffect} from "react";
+import addJS from "../elements/AddJS";
+import addCSS from "../elements/AddCSS";
 
 
 function Home() {
     useEffect(() => {
-        const script = document.createElement('script');
-        script.src = "/js/home.js";
-        const existingScript = document.querySelector('script[src="/js/home.js"]');
-        if (!existingScript) { document.head.appendChild(script); }
-
-        const link1 = document.createElement('link');
-        link1.rel = "stylesheet";
-        link1.href = "/css/home.css";
-        const existingLink1 = document.querySelector('link[href="/css/home.css"]');
-        if (!existingLink1) { document.head.appendChild(link1); }
+        addJS("/js/home.js");
+        addCSS("/css/home.css");
     }, []);
 
   return (
@@ -36,7 +30,7 @@ function Home() {
                       <Link className="nav-link" to="#">
                           <img src="/image/Premium.png" id="Premium" alt="Premium" width="auto" height="35"/>
                       </Link>
-                      <Link className="nav-link" to="./SignIn.html">
+                      <Link className="nav-link" to="/login">
                           <img src="/image/SignIn.png" id="SignIn" alt="Sign In" width="auto" height="35"/>
                       </Link>
                   </div>

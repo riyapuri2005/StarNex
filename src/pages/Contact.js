@@ -2,7 +2,7 @@
 
 function Contact() {
   return (
-      <div className="Contact">
+      <div className="Contact" style={{backgroundColor: "black"}}>
 
       </div>
   );
