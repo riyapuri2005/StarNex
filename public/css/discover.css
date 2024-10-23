@@ -19,7 +19,7 @@ header {
     align-items: center;
     justify-content: space-between;
     background: black;
-    padding: 2rem 9%;
+    padding: 1.4rem 9%;
     box-shadow: 0 .5rem 1rem rgb(0, 0, 0, .1);
 }
 
@@ -38,7 +38,7 @@ header .navbar a {
 }
 
 header .navbar a:hover {
-    color: var(--red);
+    color: white;
     text-decoration: underline;
 }
 
@@ -70,7 +70,7 @@ header .navbar a:hover {
 }
 
 .search-bar button:hover {
-    background-color: var(--red); /* Change background on hover */
+    background-color: white; /* Change background on hover */
 }
 
 /* Mobile Menu Bar */
@@ -102,6 +102,7 @@ header .navbar a:hover {
 
     nav.navbar.active {
         display: flex;
+        z-index: 1;
     }
 
     header .navbar a {
@@ -171,7 +172,6 @@ header .navbar a:hover {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
 }
 
 /* Info box that slides in */
@@ -383,7 +383,7 @@ header .navbar a:hover {
 }
 
 .game-item {
-    width: 350px;
+    width: 300px;
     height: auto;
     overflow: hidden;
     position: relative;
@@ -497,8 +497,8 @@ body:not(:root) .back-to-top {
     header .navbar {
         position: absolute;
         top: 100%;
-        left: 0%;
-        right: 0%;
+        left: 0;
+        right: 0;
         background: linear-gradient(to bottom, #000428, #9acdfa);
         border-top: .2rem solid #000;
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
@@ -514,7 +514,7 @@ body:not(:root) .back-to-top {
         padding: 1.5rem;
         display: block;
         border: .2rem solid rgba(0, 0, 0, .1);
-        border-left: .5rem solid var(--red);
+        border-left: .5rem solid white;
         background: black;
     }
 
@@ -529,7 +529,7 @@ body:not(:root) .back-to-top {
         top: 100px;
         width: 55%;
         margin-left: auto;
-        margin-top: 0px;
+        margin-top: 0;
     }
 
     .game-grid {
@@ -554,8 +554,8 @@ body:not(:root) .back-to-top {
     header .navbar {
         position: absolute;
         top: 100%;
-        left: 0%;
-        right: 0%;
+        left: 0;
+        right: 0;
         background: linear-gradient(to bottom, #000428, #9acdfa);
         border-top: .2rem solid #000;
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
@@ -571,7 +571,7 @@ body:not(:root) .back-to-top {
         padding: 1.5rem;
         display: block;
         border: .2rem solid rgba(0, 0, 0, .1);
-        border-left: .5rem solid var(--red);
+        border-left: .5rem solid white;
         background: black;
     }
 
@@ -586,7 +586,7 @@ body:not(:root) .back-to-top {
         top: 100px;
         width: 55%;
         margin-left: auto;
-        margin-top: 0px;
+        margin-top: 0;
         margin-right: auto;
     }
 
