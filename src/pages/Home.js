@@ -4,6 +4,7 @@ import addJS from "../elements/AddJS";
 import addCSS from "../elements/AddCSS";
 import checkAuth from "../elements/CheckAuth";
 import {useEffect, useState} from "react";
+import removeCSS from "../elements/RemoveCSS";
 
 
 function Home() {
@@ -13,8 +14,9 @@ function Home() {
     useEffect(() => {
         let Bearer = Cookies.get('BEARER');
         checkAuth(Bearer).then(isCorrect => {
-            if (isCorrect) { console.log("AUTH CORRECT");
+            if (isCorrect) {
                 CtoRender(toReturn);
+                removeCSS("/css/auth.css");
                 addCSS("/css/home.css");
                 addJS("/js/home.js");
             }

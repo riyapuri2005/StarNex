@@ -2,6 +2,8 @@ import {Link, useNavigate} from "react-router-dom";
 import React, {useEffect, useState} from 'react';
 import Cookies from 'js-cookie';
 import addCSS from "../elements/AddCSS";
+import removeCSS from "../elements/RemoveCSS";
+import removeJS from "../elements/RemoveJS";
 
 
 function Signup() {
@@ -96,15 +98,13 @@ function Signup() {
                 });
                 const result = await response.json();
                 if (result["STATUS"] >= 0) {
-                    console.log(result["BEARER"])
                     Cookies.set('BEARER', result["BEARER"], {expires: 30});
                     navigate("/home");
                 } else {
                     showError(null, serverError, result["REASON"]);
-                    console.error('Signup failed:', result["REASON"]);
                 }
             } catch (error) {
-                console.error('Error:', error);
+                showError(null, serverError, "Unable to connect");
             }
         }
     };
@@ -112,6 +112,8 @@ function Signup() {
 
     useEffect(() => {
         Cookies.remove('BEARER');
+        removeCSS("/css/home.css");
+        removeJS("/js/home.js");
         addCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
         addCSS("/css/auth.css");
         for(let i=0; i<=271;i++) { document.getElementById("spanGenerate").appendChild(document.createElement("span")) }

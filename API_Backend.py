@@ -11,6 +11,24 @@ baseApp = Flask(__name__)
 CORS(baseApp, origins=["http://localhost:3000"])
 
 
+knownGames = [
+    {
+        "TITLE":"",
+        "DESC":"",
+        "IMG":"",
+    },
+    {
+        "TITLE":"",
+        "DESC":"",
+        "IMG":"",
+    },
+    {
+        "TITLE":"",
+        "DESC":"",
+        "IMG":"",
+    },
+]
+
 
 def createNewUser(name, email, username, password):
     while True:
@@ -69,8 +87,6 @@ def signupRoute():
     email = request.get_json()["EMAIL"]
     username = request.get_json()["UNAME"]
     password = request.get_json()["PASSWORD"]
-    print(SQLConn.execute(f"SELECT email from playerauth where email=\"{email}\""))
-    print(SQLConn.execute(f"SELECT username from playerauth where username=\"{username}\""))
     if not name:
         response = {"STATUS":-1, "REASON":"NAME INVALID"}
     elif (not email) or SQLConn.execute(f"SELECT email from playerauth where email=\"{email}\""):
