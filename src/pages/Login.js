@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import Cookies from "js-cookie";
 import addCSS from "../elements/AddCSS";
 import {useNavigate} from "react-router-dom";
+import removeJS from "../elements/RemoveJS";
+import removeCSS from "../elements/RemoveCSS";
 
 
 function Login() {
@@ -29,11 +31,10 @@ function Login() {
 
         let isValid = true;
 
-        const usernameInput = document.getElementById('username');
         const passwordInput = document.getElementById('password');
-
-        const usernameError = document.getElementById('usernameError');
         const passwordError = document.getElementById('passwordError');
+        const serverError = document.getElementById('serverError');
+
 
 
         if (password.trim().length < 8) {
@@ -58,10 +59,10 @@ function Login() {
                     Cookies.set('BEARER', result["BEARER"], { expires: 30 });
                     navigate("/home");
                 } else {
-                    console.error('Login failed:', result["REASON"]);
+                    showError(null, serverError, result["REASON"]);
                 }
             } catch (error) {
-                console.error('Error:', error);
+                showError(null, serverError, "Unable to connect");
             }
         }
     };
@@ -69,6 +70,8 @@ function Login() {
 
     useEffect(() => {
         Cookies.remove('BEARER');
+        removeCSS("/css/home.css");
+        removeJS("/js/home.js");
         addCSS("/css/auth.css");
         addCSS("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
         for(let i=0; i<=271;i++) { document.getElementById("spanGenerate").appendChild(document.createElement("span")) }
