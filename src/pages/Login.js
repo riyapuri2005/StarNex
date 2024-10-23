@@ -78,54 +78,56 @@ function Login() {
 
 
     return (
-      <div className="Login">
-          <section id="spanGenerate"></section>
-          <div className="container">
-              <header>Sign In Form</header>
-              <form id="loginForm" noValidate onSubmit={handleLogin}>
-                  <span className="error" id="serverError"></span>
-                  <div className="field email-field">
-                      <div className="input-field">
-                          <input type="username" placeholder="Username" id="username"
-                                 onChange={(e) => setUsername(e.target.value)}/>
-                          <span className="error" id="usernameError">Please enter a valid email</span>
-                      </div>
-                  </div>
+        <div className="Login">
+            <section id="spanGenerate"></section>
+            <div className="flexbox">
+                <div className="container">
+                    <header>Sign In Form</header>
+                    <form id="loginForm" noValidate onSubmit={handleLogin}>
+                        <span className="error" id="serverError"></span>
+                        <div className="field email-field">
+                            <div className="input-field">
+                                <input type="username" placeholder="Username" id="username"
+                                       onChange={(e) => setUsername(e.target.value)}/>
+                                <span className="error" id="usernameError">Please enter a valid email</span>
+                            </div>
+                        </div>
 
-                  <div className="field create-password">
-                      <div className="input-field">
-                          <input type="password" placeholder="Password" id="password"
-                                 onChange={(e) => setPassword(e.target.value)}/>
-                          <i id="peye" className="bx bx-hide show-hide" onClick={() => {
-                              const inputField = document.getElementById("password");
-                              const eye = document.getElementById("peye");
-                              if (inputField.type === "password") {
-                                  inputField.type = "text";
-                                  eye.classList.remove("bx-hide");
-                                  eye.classList.add("bx-show");
-                              } else {
-                                  inputField.type = "password";
-                                  eye.classList.remove("bx-show");
-                                  eye.classList.add("bx-hide");
-                              }
-                          }
-                          }></i>
-                          <span className="error" id="passwordError">Password must be at least 8 characters</span>
-                      </div>
-                  </div>
+                        <div className="field create-password">
+                            <div className="input-field">
+                                <input type="password" placeholder="Password" id="password"
+                                       onChange={(e) => setPassword(e.target.value)}/>
+                                <i id="peye" className="bx bx-hide show-hide" onClick={() => {
+                                    const inputField = document.getElementById("password");
+                                    const eye = document.getElementById("peye");
+                                    if (inputField.type === "password") {
+                                        inputField.type = "text";
+                                        eye.classList.remove("bx-hide");
+                                        eye.classList.add("bx-show");
+                                    } else {
+                                        inputField.type = "password";
+                                        eye.classList.remove("bx-show");
+                                        eye.classList.add("bx-hide");
+                                    }
+                                }
+                                }></i>
+                                <span className="error" id="passwordError">Password must be at least 8 characters</span>
+                            </div>
+                        </div>
 
-                  <div className="links">
-                      <a href="https://gmail.com/">Forgot Password</a>
-                      <a href="/signup" target="_blank">Signup</a>
-                  </div>
+                        <div className="links">
+                            <a href="https://gmail.com/">Forgot Password</a>
+                            <a href="/signup" target="_blank">Signup</a>
+                        </div>
 
-                  <div className="input-field button">
-                      <input type="submit" value="Login Now"/>
-                  </div>
-              </form>
-          </div>
-      </div>
-    );
-}
+                        <div className="input-field button">
+                            <input type="submit" value="Login Now"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+            );
+            }
 
-export default Login;
+            export default Login;
