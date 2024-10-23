@@ -54,7 +54,6 @@ function Login() {
                 });
                 const result = await response.json();
                 if (result["STATUS"]>=0) {
-                    console.log(result["BEARER"])
                     Cookies.set('BEARER', result["BEARER"], { expires: 30 });
                     navigate("/home");
                 } else {

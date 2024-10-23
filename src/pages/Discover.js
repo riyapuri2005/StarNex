@@ -12,13 +12,18 @@ function Discover() {
     const [toRender, CtoRender] = useState("")
     const navigate = useNavigate();
 
-    const [allGames, setAllGames] = useState({});
+
 
     const handleSearch = (text) => {
+        let allGames = window.games;
+
         for (let category in allGames)
         {
-            for (let gameData in allGames[category])
+            for (const [key, value] of Object.entries(document.getElementById(category).children)) { value.remove(); }
+
+            for (let gameIndex in allGames[category])
             {
+                let gameData = allGames[category][gameIndex];
                 if (gameData['TITLE'].toLowerCase().includes(text.toLowerCase()))
                 {
                     let newMainDiv = document.createElement("div");
@@ -43,8 +48,12 @@ function Discover() {
         checkAuth(Bearer).then(isCorrect => {
             if (isCorrect) {
                 CtoRender(toReturn);
-                console.log(fetchGames());
-                setAllGames(fetchGames());
+                let receivedGames = {};
+                fetchGames().then(e => {
+                    for (const [category, gameList] of Object.entries(e)) { receivedGames[category] = gameList; }
+                    window.games = receivedGames;
+                    handleSearch("");
+                });
                 addCSS("/css/discover.css");
                 addCSS("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
                 addCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");

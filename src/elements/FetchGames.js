@@ -7,7 +7,9 @@ const fetchGames = async () => {
                 'Content-Type': 'application/json',
             }
         });
-        return await response.json();
+
+        return response.json();
+
     } catch (error) {
         console.error('Error:', error);
         return {};
