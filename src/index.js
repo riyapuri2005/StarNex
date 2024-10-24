@@ -11,7 +11,7 @@ import IrisPage from './pages/Iris';
 import FeedbackPage from './pages/Feedback';
 import LoginPage from './pages/Login';
 import SignupPage from './pages/Signup';
-import GamePage from './pages/Game';
+import GamesPage from './pages/Games';
 import SpaceRocks from "./pages/SpaceRocks";
 
 
@@ -27,7 +27,7 @@ root.render(
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
 
-              <Route path="/games" element={<GamePage />} />
+              <Route path="/games" element={<GamesPage />} />
 
               <Route path="/games/spacerocks/play" element={<SpaceRocks />} />
 
