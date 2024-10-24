@@ -112,10 +112,16 @@ function Signup() {
 
     useEffect(() => {
         Cookies.remove('BEARER');
+        removeCSS("/css/game.css");
         removeCSS("/css/home.css");
+        removeCSS("/css/discover.css");
+        removeCSS("/css/feedback.css");
+        removeCSS("/css/Iris.css");
+        removeJS("/js/iris.js");
         removeJS("/js/home.js");
-        addCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+        removeJS("/js/discover.js");
         addCSS("/css/auth.css");
+        addCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
         for(let i=0; i<=271;i++) { document.getElementById("spanGenerate").appendChild(document.createElement("span")) }
     }, []);
 

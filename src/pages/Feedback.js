@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import checkAuth from "../elements/CheckAuth";
 import removeCSS from "../elements/RemoveCSS";
+import removeJS from "../elements/RemoveJS";
 
 
 function Feedback() {
@@ -15,6 +16,14 @@ function Feedback() {
         let Bearer = Cookies.get('BEARER');
         checkAuth(Bearer).then(isCorrect => {
             if (isCorrect) {
+                removeCSS("/css/game.css");
+                removeCSS("/css/auth.css");
+                removeCSS("/css/home.css");
+                removeCSS("/css/discover.css");
+                removeCSS("/css/Iris.css");
+                removeJS("/js/iris.js");
+                removeJS("/js/home.js");
+                removeJS("/js/discover.js");
                 addCSS("/css/feedback.css");
                 addCSS("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
                 addJS("https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js");

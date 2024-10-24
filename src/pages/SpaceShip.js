@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 import checkAuth from "../elements/CheckAuth";
 import removeCSS from "../elements/RemoveCSS";
 import addCSS from "../elements/AddCSS";
-import addJS from "../elements/AddJS";
+import removeJS from "../elements/RemoveJS";
 
 
 function SpaceShip() {
@@ -26,6 +26,14 @@ function SpaceShip() {
                 }
                 else
                 {
+                    removeCSS("/css/auth.css");
+                    removeCSS("/css/home.css");
+                    removeCSS("/css/discover.css");
+                    removeCSS("/css/feedback.css");
+                    removeCSS("/css/Iris.css");
+                    removeJS("/js/iris.js");
+                    removeJS("/js/home.js");
+                    removeJS("/js/discover.js");
                     addCSS("/css/game.css");
                     CtoRender(outFrame);
                 }

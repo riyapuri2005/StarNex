@@ -5,6 +5,7 @@ import addCSS from "../elements/AddCSS";
 import addJS from "../elements/AddJS";
 import {useNavigate} from "react-router-dom";
 import removeCSS from "../elements/RemoveCSS";
+import removeJS from "../elements/RemoveJS";
 
 
 function Iris() {
@@ -13,7 +14,17 @@ function Iris() {
     useEffect(() => {
         let Bearer = Cookies.get('BEARER');
         checkAuth(Bearer).then(isCorrect => {
-            if (isCorrect) { addJS("/js/iris.js");
+            if (isCorrect) {
+                removeCSS("/css/game.css");
+                removeCSS("/css/auth.css");
+                removeCSS("/css/home.css");
+                removeCSS("/css/discover.css");
+                removeCSS("/css/feedback.css");
+                removeCSS("/css/Iris.css");
+                removeJS("/js/iris.js");
+                removeJS("/js/home.js");
+                removeJS("/js/discover.js");
+                addJS("/js/iris.js");
                 addCSS("/css/Iris.css");
                 addCSS("https://fonts.googleapis.com/css?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
                 CtoRender(toReturn);

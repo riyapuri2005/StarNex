@@ -6,7 +6,7 @@ from randomisedString import Generator as STR_GEN
 from pooledMySQL import Manager as SQL_MANAGER
 
 strGen = STR_GEN()
-SQLConn = SQL_MANAGER("starnex", "SimplePassword@69", "starnex", "bhindi1.ddns.net")
+SQLConn = SQL_MANAGER("starnex", "SimplePassword@69", "starnex", )
 baseApp = Flask(__name__)
 CORS(baseApp, origins=["http://localhost:3000"])
 

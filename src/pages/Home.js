@@ -5,6 +5,7 @@ import addCSS from "../elements/AddCSS";
 import checkAuth from "../elements/CheckAuth";
 import {useEffect, useState} from "react";
 import removeCSS from "../elements/RemoveCSS";
+import removeJS from "../elements/RemoveJS";
 
 
 function Home() {
@@ -14,7 +15,14 @@ function Home() {
         let Bearer = Cookies.get('BEARER');
         checkAuth(Bearer).then(isCorrect => {
             if (isCorrect) {
+                removeCSS("/css/game.css");
                 removeCSS("/css/auth.css");
+                removeCSS("/css/discover.css");
+                removeCSS("/css/feedback.css");
+                removeCSS("/css/Iris.css");
+                removeJS("/js/iris.js");
+                removeJS("/js/home.js");
+                removeJS("/js/discover.js");
                 addCSS("/css/home.css");
                 addJS("/js/home.js");
                 CtoRender(toReturn);

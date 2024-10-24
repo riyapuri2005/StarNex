@@ -6,6 +6,8 @@ import Cookies from "js-cookie";
 import checkAuth from "../elements/CheckAuth";
 import fetchGames from "../elements/FetchGames";
 import {HashLink} from "react-router-hash-link";
+import removeCSS from "../elements/RemoveCSS";
+import removeJS from "../elements/RemoveJS";
 
 
 function Discover() {
@@ -53,10 +55,17 @@ function Discover() {
                     window.games = receivedGames;
                     handleSearch("");
                 });
+                removeCSS("/css/game.css");
+                removeCSS("/css/auth.css");
+                removeCSS("/css/home.css");
+                removeCSS("/css/feedback.css");
+                removeCSS("/css/Iris.css");
+                removeJS("/js/iris.js");
+                removeJS("/js/home.js");
                 addCSS("/css/discover.css");
+                addJS("/js/discover.js");
                 addCSS("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
                 addCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
-                addJS("/js/discover.js");
             }
             else { navigate("/login"); }
         })
