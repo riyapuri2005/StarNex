@@ -24,7 +24,11 @@ function CarRush() {
                     const existingScript = document.querySelector('script[src="/games/spacerocks/html5game/null.js"]');
                     if (!existingScript) { document.head.appendChild(script); }
                 }
-                else CtoRender(outFrame);
+                else
+                {
+                    addCSS("/css/game.css");
+                    CtoRender(outFrame);
+                }
             }
             else { navigate("/login"); }
         })

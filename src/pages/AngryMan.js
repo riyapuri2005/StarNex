@@ -24,7 +24,11 @@ function AngryMan() {
                     const existingScript = document.querySelector('script[src="/games/spacerocks/html5game/AngryMan.js"]');
                     if (!existingScript) { document.head.appendChild(script); }
                 }
-                else CtoRender(outFrame);
+                else
+                {
+                    addCSS("/css/game.css");
+                    CtoRender(outFrame);
+                }
             }
             else { navigate("/login"); }
         })
