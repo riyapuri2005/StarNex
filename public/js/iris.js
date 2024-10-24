@@ -21,9 +21,9 @@ const createChatLi = (message, className) => {
     // Set the icon based on message type
     let icon;
     if (className === "incoming") {
-        icon = "./public/image/chatbot.png"; // Path to chatbot icon
+        icon = "/image/chatbot.png"; // Path to chatbot icon
     } else {
-        icon = "./public/image/hacker.png"; // Path to hacker icon for user messages
+        icon = "/image/hacker.png"; // Path to hacker icon for user messages
     }
 
     let chatContent = `
