@@ -1,22 +1,30 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import Cookies from "js-cookie";
 import checkAuth from "../elements/CheckAuth";
 import addCSS from "../elements/AddCSS";
 import addJS from "../elements/AddJS";
+import {useNavigate} from "react-router-dom";
+import removeCSS from "../elements/RemoveCSS";
 
 
 function Iris() {
-
-
+    const [toRender, CtoRender] = useState("")
+    const navigate = useNavigate();
     useEffect(() => {
-        addJS("/js/iris.js");
-        addCSS("/css/Iris.css");
-        addCSS("https://fonts.googleapis.com/css?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+        let Bearer = Cookies.get('BEARER');
+        checkAuth(Bearer).then(isCorrect => {
+            if (isCorrect) { addJS("/js/iris.js");
+                addCSS("/css/Iris.css");
+                addCSS("https://fonts.googleapis.com/css?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+                CtoRender(toReturn);
+            }
+            else { navigate("/login"); }
+        })
     }, []);
 
 
 
-  return (
+  let toReturn = (
       <div className="Iris show-chatbot">
           <header>
               <h2>
@@ -39,6 +47,7 @@ function Iris() {
           </div>
       </div>
   );
+  return toRender;
 }
 
 export default Iris;
