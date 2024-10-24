@@ -27,17 +27,18 @@ function Discover() {
                 let gameData = allGames[category][gameIndex];
                 if (gameData['TITLE'].toLowerCase().includes(text.toLowerCase()))
                 {
-                    let newMainDiv = document.createElement("div");
-                    newMainDiv.className = "game-item";
+                    let newMainAnchor = document.createElement("a");
+                    newMainAnchor.className = "game-item";
+                    newMainAnchor.href = gameData['URL'];
                     let newImage = document.createElement("img");
                     newImage.src = gameData['IMG'];
                     newImage.alt = gameData['TITLE'];
                     let newChildDiv = document.createElement("div");
                     newChildDiv.className = "game-info";
                     newChildDiv.innerHTML = `<h3>${gameData['TITLE']}</h3><p>${gameData['DESC']}</p>`;
-                    newMainDiv.appendChild(newImage);
-                    newMainDiv.appendChild(newChildDiv);
-                    document.getElementById(category).appendChild(newMainDiv);
+                    newMainAnchor.appendChild(newImage);
+                    newMainAnchor.appendChild(newChildDiv);
+                    document.getElementById(category).appendChild(newMainAnchor);
                 }
             }
         }

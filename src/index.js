@@ -35,6 +35,7 @@ root.render(
               <Route path="/games/spaceship/play" element={<SpaceShip />} />
 
 
+              <Route path="/games/*" element={<Navigate to="/discover" />} />
               <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
       </Router>
