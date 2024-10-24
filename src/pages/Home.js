@@ -60,20 +60,20 @@ function Home() {
 
           <section>
               <img src="/image/background.png" style={{height: '130%', width: '100%'}} id="background"
-                   className="parallax" alt={}/>
-              <img src="/image/stars.png" style={{opacity: '70%'}} id="stars" alt={}/>
+                   className="parallax" alt=""/>
+              <img src="/image/stars.png" style={{opacity: '70%'}} id="stars" alt=""/>
               <img src="/image/3Front.png" style={{height: '100%', width: '100%'}} id="mountains_behind"
-                   className="parallax" alt={}/>
+                   className="parallax" alt=""/>
               <img src="/image/2Front.png" style={{height: '100%', width: '100%'}} id="mountains_front"
-                   className="parallax" alt={}/>
+                   className="parallax" alt=""/>
               <h6 id="text2" className="LevelUp"> LEVEL UP </h6>
               <h2 id="text1" className="TheStars"> THE STARS </h2>
               <Link to="/discover" id="btn" style={{textAlign: 'center'}}> PLAY NOW </Link>
               <img src="/image/1Front.png" style={{height: '100%', width: '100%'}} id="mountains_front"
-                   className="parallax" alt={}/>
+                   className="parallax" alt=""/>
           </section>
 
-          <img src="/image/2astronaut.png" id="astronaut" className="parallax right-bottom-image" alt={}/>
+          <img src="/image/2astronaut.png" id="astronaut" className="parallax right-bottom-image" alt=""/>
 
           <div className="chatbot-icon">
               <Link to="/iris"> <img src="/image/IRIS.png" alt="Chatbot"/> </Link>
