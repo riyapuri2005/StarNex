@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 import addCSS from "../elements/AddCSS";
 import removeCSS from "../elements/RemoveCSS";
 import removeJS from "../elements/RemoveJS";
+import addJS from "../elements/AddJS";
 
 
 function Signup() {
@@ -104,7 +105,7 @@ function Signup() {
                     showError(null, serverError, result["REASON"]);
                 }
             } catch (error) {
-                showError(null, serverError, "Unable to connect");
+                showError(null, serverError, "Unable to connect to API");
             }
         }
     };
@@ -120,17 +121,16 @@ function Signup() {
         removeJS("/js/iris.js");
         removeJS("/js/home.js");
         removeJS("/js/discover.js");
+        addJS("/js/signup.js");
         addCSS("/css/auth.css");
         addCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+        addCSS("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
         for(let i=0; i<=271;i++) { document.getElementById("spanGenerate").appendChild(document.createElement("span")) }
     }, []);
 
 
     return (
         <div className="Signup">
-
-            <script src="/js/signup.js"></script>
-
             <section id="spanGenerate"></section>
             <div className="flexbox">
                 <div className="container">

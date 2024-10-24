@@ -18,10 +18,6 @@ function CarRush() {
                 if (isIframe)
                 {
                     CtoRender(inFrame);
-                    const script = document.createElement('script');
-                    script.src = "/games/carrush/html5game/1.js";
-                    const existingScript = document.querySelector('script[src="/games/carrush/html5game/1.js"]');
-                    if (!existingScript) { document.head.appendChild(script); }
                 }
                 else
                 {

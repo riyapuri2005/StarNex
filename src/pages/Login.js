@@ -58,7 +58,7 @@ function Login() {
                     showError(null, serverError, result["REASON"]);
                 }
             } catch (error) {
-                showError(null, serverError, "Unable to connect");
+                showError(null, serverError, "Unable to connect to API");
             }
         }
     };
@@ -90,16 +90,14 @@ function Login() {
                         <span className="error" id="serverError"></span>
                         <div className="field email-field">
                             <div className="input-field">
-                                <input type="username" placeholder="Username" id="username"
-                                       onChange={(e) => setUsername(e.target.value)}/>
+                                <input type="username" placeholder="Username" id="username" onChange={(e) => setUsername(e.target.value)}/>
                                 <span className="error" id="usernameError">Please enter a valid email</span>
                             </div>
                         </div>
 
                         <div className="field create-password">
                             <div className="input-field">
-                                <input type="password" placeholder="Password" id="password"
-                                       onChange={(e) => setPassword(e.target.value)}/>
+                                <input type="password" placeholder="Password" id="password" onChange={(e) => setPassword(e.target.value)}/>
                                 <i id="peye" className="bx bx-hide show-hide" onClick={() => {
                                     const inputField = document.getElementById("password");
                                     const eye = document.getElementById("peye");
@@ -130,7 +128,7 @@ function Login() {
                 </div>
             </div>
         </div>
-            );
-            }
+    );
+}
 
-            export default Login;
+export default Login;

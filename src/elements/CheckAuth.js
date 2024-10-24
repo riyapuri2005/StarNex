@@ -18,6 +18,7 @@ const checkAuth = async (Bearer) => {
         }
     } catch (error) {
         console.error('Error:', error);
+        return false;
     }
 }
 

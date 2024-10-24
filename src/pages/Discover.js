@@ -116,10 +116,10 @@ function Discover() {
                         </HashLink>
                     </li>
                     <li>
-                        <a href="#">
+                        <HashLink href="#retro">
                             <i className="fa fa-fw fa-retro"></i>
                             <span>Retro Games</span>
-                        </a>
+                        </HashLink>
                     </li>
                 </ul>
             </div>
@@ -127,53 +127,53 @@ function Discover() {
                 <div className="sidebar">
                     <ul>
                         <li>
-                            <a href="#">
+                            <HashLink href="#ree">
                                 <i className="fa fa-fw fa-gamepad"></i>
                                 <span>Ree Games</span>
-                            </a>
+                            </HashLink>
                         </li>
                         <li>
-                            <a href="#">
+                            <HashLink href="#best">
                                 <i className="fa fa-fw fa-trophy"></i>
                                 <span>Best</span>
-                            </a>
+                            </HashLink>
                         </li>
                         <li>
-                            <a href="#">
+                            <HashLink href="#seasonal">
                                 <i className="fa fa-fw fa-sun"></i>
                                 <span>Seasonal Games</span>
-                            </a>
+                            </HashLink>
                         </li>
                         <li>
-                            <a href="#">
+                            <HashLink href="#original">
                                 <i className="fa fa-fw fa-puzzle-piece"></i>
                                 <span>Original</span>
-                            </a>
+                            </HashLink>
                         </li>
 
                         <li>
-                            <a href="#">
+                            <HashLink href="#car">
                                 <i className="fa fa-fw fa-car"></i>
                                 <span>Car Games</span>
-                            </a>
+                            </HashLink>
                         </li>
                         <li>
-                            <a href="#">
+                            <HashLink href="#beauty">
                                 <i className="fa fa-fw fa-female"></i>
                                 <span>Beauty Games</span>
-                            </a>
+                            </HashLink>
                         </li>
                         <li>
-                            <a href="#">
+                            <HashLink href="#bike">
                                 <i className="fa fa-fw fa-motorcycle"></i>
                                 <span>Bike Games</span>
-                            </a>
+                            </HashLink>
                         </li>
                         <li>
-                            <a href="#">
+                            <HashLink href="#action">
                                 <i className="fa fa-fw fa-fist-raised"></i>
                                 <span>Action Games</span>
-                            </a>
+                            </HashLink>
                         </li>
                     </ul>
                 </div>
@@ -274,10 +274,10 @@ function Discover() {
                         </HashLink>
                     </li>
                     <li>
-                        <a href="#">
+                        <HashLink href="#pool">
                             <i className="fas fa-circle-notch"></i>
                             <span>8 Ball Pool</span>
-                        </a>
+                        </HashLink>
                     </li>
                 </ul>
             </div>

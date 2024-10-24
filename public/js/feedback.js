@@ -49,7 +49,4 @@ function savePost(){
     }).catch(error=>{
         alert(error);
     })
-
-
-
 }

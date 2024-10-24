@@ -6,16 +6,12 @@ from randomisedString import Generator as STR_GEN
 from pooledMySQL import Manager as SQL_MANAGER
 
 
+
 strGen = STR_GEN()
 SQLConn = SQL_MANAGER("starnex", "12345678", "starnex", "bhindi1.ddns.net", 3308)
 baseApp = Flask(__name__)
 CORS(baseApp, origins=["http://localhost:3000"])
 
-
-knownGames = {}
-for item in SQLConn.execute("SELECT * FROM availablegames"):
-    if item["category"] not in knownGames: knownGames[item["category"]] = []
-    knownGames[item["category"]].append({"TITLE": item["title"], "DESC": item["desc"], "URL": item["url"], "IMG": item["img"]})
 
 
 def createNewUser(name, email, username, password):
@@ -69,10 +65,16 @@ def forceCheckAuth(userID, deviceID):
     return response
 
 
+
 @baseApp.route("/discover", methods=["POST"])
 def discoverRoute():
+    knownGames = {}
+    for item in SQLConn.execute("SELECT * FROM availablegames"):
+        if item["category"] not in knownGames: knownGames[item["category"]] = []
+        knownGames[item["category"]].append({"TITLE": item["title"], "DESC": item["desc"], "URL": item["url"], "IMG": item["img"]})
     print(knownGames)
     return knownGames
+
 
 
 @baseApp.route("/signup", methods=["POST"])
@@ -96,6 +98,7 @@ def signupRoute():
     return response
 
 
+
 @baseApp.route("/login", methods=["POST"])
 def loginRoute():
     username = request.get_json()["UNAME"]
@@ -114,8 +117,8 @@ def loginRoute():
                 bearer = createNewDevice(userID)
                 response = {"STATUS":0, "BEARER":bearer}
             else:
-                response = {"STATUS":-1, "BEARER":"PASSWORD INVALID"}
-        else: response = {"STATUS":-1, "REASON":"CREDENTIALS INVALID"}
+                response = {"STATUS":-1, "REASON":"PASSWORD INVALID"}
+        else: response = {"STATUS":-1, "REASON":"USERNAME INVALID"}
     print(response)
     return response
 
