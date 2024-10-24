@@ -14,12 +14,16 @@ function SpaceRocks() {
         let Bearer = Cookies.get('BEARER');
         checkAuth(Bearer).then(isCorrect => {
             if (isCorrect) {
-                const script = document.createElement('script');
-                script.src = "/games/spacerocks/html5game/Space%20Rocks.js";
-                script.onload  = () => {window.GameMaker_Init();};
-                const existingScript = document.querySelector('script[src="/games/spacerocks/html5game/Space%20Rocks.js"]');
-                if (!existingScript) { document.head.appendChild(script); }
-                if (window.location !== window.parent.location) CtoRender(inFrame);
+
+                if (window.location !== window.parent.location)
+                {
+                    CtoRender(inFrame);
+                    const script = document.createElement('script');
+                    script.src = "/games/spacerocks/html5game/Space%20Rocks.js";
+                    script.onload  = () => {window.GameMaker_Init();};
+                    const existingScript = document.querySelector('script[src="/games/spacerocks/html5game/Space%20Rocks.js"]');
+                    if (!existingScript) { document.head.appendChild(script); }
+                }
                 else CtoRender(outFrame);
             }
             else { navigate("/login"); }
