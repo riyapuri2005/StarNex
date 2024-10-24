@@ -61,7 +61,7 @@ function Home() {
                    className="parallax"/>
               <h6 id="text2" className="LevelUp"> LEVEL UP </h6>
               <h2 id="text1" className="TheStars"> THE STARS </h2>
-              <Link to="/game" id="btn" style={{textAlign: 'center'}}> PLAY NOW </Link>
+              <Link to="/games" id="btn" style={{textAlign: 'center'}}> PLAY NOW </Link>
               <img src="/image/1Front.png" style={{height: '100%', width: '100%'}} id="mountains_front"
                    className="parallax"/>
           </section>

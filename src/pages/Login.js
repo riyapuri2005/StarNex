@@ -13,17 +13,15 @@ function Login() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    // Show error message and add red border
     function showError(input, errorElement, message) {
         errorElement.textContent = message;
         errorElement.style.display = 'block';
-        input.classList.add('error-border');
+        if (input !== null) input.classList.add('error-border');
     }
 
-    // Clear error message and remove red border
     function clearError(input, errorElement) {
         errorElement.style.display = 'none';
-        input.classList.remove('error-border');
+        if (input !== null) input.classList.remove('error-border');
     }
 
     const handleLogin = async (e) => {

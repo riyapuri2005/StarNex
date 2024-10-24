@@ -13,7 +13,6 @@ function Discover() {
     const navigate = useNavigate();
 
 
-
     const handleSearch = (text) => {
         let allGames = window.games;
 
