@@ -19,9 +19,9 @@ function AngryMan() {
                 {
                     CtoRender(inFrame);
                     const script = document.createElement('script');
-                    script.src = "/games/spacerocks/html5game/AngryMan.js";
+                    script.src = "/games/angryman/html5game/AngryMan.js";
                     script.onload  = () => {window.GameMaker_Init();};
-                    const existingScript = document.querySelector('script[src="/games/spacerocks/html5game/AngryMan.js"]');
+                    const existingScript = document.querySelector('script[src="/games/angryman/html5game/AngryMan.js"]');
                     if (!existingScript) { document.head.appendChild(script); }
                 }
                 else
