@@ -1,9 +1,36 @@
+
+if (stars === 'undefined')
+{
+    let stars;
+    let mountains_behind;
+    let text1;
+    let text2;
+    let btn;
+    let mountains_front1;
+    let mountains_front2;
+    let astronaut;
+    let initialTextOffsetTop;
+    let initialTextOffsetTop2;
+}
+
+
+stars = document.getElementById('stars');
+mountains_behind = document.getElementById('mountains_behind');
+text1 = document.getElementById('text1');
+text2 = document.getElementById('text2');
+btn = document.getElementById('btn');
+mountains_front1 = document.getElementById('mountains_front1');
+mountains_front2 = document.getElementById('mountains_front2');
+astronaut = document.getElementById('astronaut');
+
+initialTextOffsetTop = text1.offsetTop;
+initialTextOffsetTop2 = text2.offsetTop;
 window.addEventListener('scroll', function(){
     let value = window.scrollY;
-    document.getElementById('stars').style.left = value * 0.25 + 'px';
-    document.getElementById('text1').style.top = (document.getElementById('text1').offsetTop + value * 0.5) + 'px';
-    document.getElementById('text2').style.top = (document.getElementById('text2').offsetTop + value * 0.5) + 'px';
-    document.getElementById('btn').style.bottom = value * 1.05 + 'px';
-    document.getElementById('mountains_behind').style.top = value * 0.45 + 'px';
-    document.getElementById('btn').style.marginTop = value * 1.25 + 'px';
+    stars.style.left = value * 0.25 + 'px';
+    text1.style.top = (initialTextOffsetTop + value * 0.5) + 'px';
+    text2.style.top = (initialTextOffsetTop2 + value * 0.5) + 'px';
+    btn.style.bottom = value * 1.05 + 'px';
+    mountains_behind.style.top = value * 0.45 + 'px';
+    btn.style.marginTop = value * 1.25 + 'px';
 })
