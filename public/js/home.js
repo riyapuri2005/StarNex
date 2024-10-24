@@ -1,18 +1,7 @@
 
-if (stars === 'undefined')
-{
-    let stars;
-    let mountains_behind;
-    let text1;
-    let text2;
-    let btn;
-    let mountains_front1;
-    let mountains_front2;
-    let astronaut;
-    let initialTextOffsetTop;
-    let initialTextOffsetTop2;
+if (stars === 'undefined') {
+    let stars, mountains_behind, text1, text2, btn, mountains_front1, mountains_front2, astronaut, initialTextOffsetTop, initialTextOffsetTop2;
 }
-
 
 stars = document.getElementById('stars');
 mountains_behind = document.getElementById('mountains_behind');
