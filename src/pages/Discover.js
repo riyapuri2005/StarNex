@@ -60,7 +60,7 @@ function Discover() {
                 removeCSS("/css/auth.css");
                 removeCSS("/css/home.css");
                 removeCSS("/css/feedback.css");
-                removeCSS("/css/Iris.css");
+                removeCSS("/css/iris.css");
                 removeJS("/js/iris.js");
                 removeJS("/js/home.js");
                 addCSS("/css/discover.css");

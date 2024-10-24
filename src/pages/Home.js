@@ -19,7 +19,7 @@ function Home() {
                 removeCSS("/css/auth.css");
                 removeCSS("/css/discover.css");
                 removeCSS("/css/feedback.css");
-                removeCSS("/css/Iris.css");
+                removeCSS("/css/iris.css");
                 removeJS("/js/iris.js");
                 removeJS("/js/home.js");
                 removeJS("/js/discover.js");
@@ -136,7 +136,7 @@ function Home() {
                           <li><Link to="/discover">Discover</Link></li>
                           <li><Link to="/iris">IrisAI</Link></li>
                           <li><Link to="/feedback">Feedback</Link></li>
-                          <li><Link to="https://mail.google.com/mail/u/0/#inbox">Contact</Link></li>
+                          <li><Link to="/contact">Contact</Link></li>
                       </ul>
                   </div>
                   <div className="footer-content">

@@ -70,7 +70,7 @@ function Login() {
         removeCSS("/css/home.css");
         removeCSS("/css/discover.css");
         removeCSS("/css/feedback.css");
-        removeCSS("/css/Iris.css");
+        removeCSS("/css/iris.css");
         removeJS("/js/iris.js");
         removeJS("/js/home.js");
         removeJS("/js/discover.js");
