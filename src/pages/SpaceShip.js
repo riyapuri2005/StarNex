@@ -7,7 +7,7 @@ import addCSS from "../elements/AddCSS";
 import addJS from "../elements/AddJS";
 
 
-function SpaceRocks() {
+function SpaceShip() {
     const [toRender, CtoRender] = useState("")
     const navigate = useNavigate();
     useEffect(() => {
@@ -19,9 +19,9 @@ function SpaceRocks() {
                 {
                     CtoRender(inFrame);
                     const script = document.createElement('script');
-                    script.src = "/games/spacerocks/html5game/Space Rocks.js";
+                    script.src = "/games/spaceship/html5game/rock and arrow.js";
                     script.onload  = () => {window.GameMaker_Init();};
-                    const existingScript = document.querySelector('script[src="/games/spacerocks/html5game/Space Rocks.js"]');
+                    const existingScript = document.querySelector('script[src="/games/spaceship/html5game/rock and arrow.js"]');
                     if (!existingScript) { document.head.appendChild(script); }
                 }
                 else CtoRender(outFrame);
@@ -33,7 +33,7 @@ function SpaceRocks() {
 
 
     let inFrame = (
-        <div className="SpaceRocks">
+        <div className="SpaceShip">
             <div className="gm4html5_div_class" id="gm4html5_div_id">
                 <canvas id="canvas" width="1280" height="720">
                     <p>Your browser doesn't support HTML5 canvas.</p>
@@ -42,9 +42,9 @@ function SpaceRocks() {
         </div>
     );
     let outFrame = (
-        <iframe src="/games/spacerocks/play" title="Embedded Page"></iframe>
+        <iframe src="/games/spaceship/play" title="Embedded Page"></iframe>
     )
     return toRender;
 }
 
-export default SpaceRocks;
+export default SpaceShip;

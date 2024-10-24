@@ -12,6 +12,9 @@ import FeedbackPage from './pages/Feedback';
 import LoginPage from './pages/Login';
 import SignupPage from './pages/Signup';
 import SpaceRocks from "./pages/SpaceRocks";
+import AngryMan from "./pages/AngryMan";
+import CarRush from "./pages/CarRush";
+import SpaceShip from "./pages/SpaceShip";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -26,7 +29,11 @@ root.render(
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
 
+              <Route path="/games/angryman/play" element={<AngryMan />} />
+              <Route path="/games/carrush/play" element={<CarRush />} />
               <Route path="/games/spacerocks/play" element={<SpaceRocks />} />
+              <Route path="/games/spaceship/play" element={<SpaceShip />} />
+
 
               <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
