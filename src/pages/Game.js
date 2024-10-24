@@ -1,3 +1,7 @@
+import {useEffect} from "react";
+
+useEffect(() => {
+
 function Game() {
   return (
       <div className="Game">
