@@ -14,39 +14,745 @@ CORS(baseApp, origins=["http://localhost:3000"])
 knownGames = {
     "grid_recent":[
         {
-            "TITLE": "Game1",
-            "DESC": "Desc1",
-            "IMG": "",
+            "TITLE": "Angry Man",
+            "DESC": "Angry Man Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/angryman/play",
         },
         {
-            "TITLE": "Game2",
-            "DESC": "Desc2",
-            "IMG": "",
+            "TITLE": "Car Rush",
+            "DESC": "Car Rush Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/carrush/play",
         },
         {
-            "TITLE": "Game3",
-            "DESC": "Desc3",
-            "IMG": "",
-        }
+            "TITLE": "Space Ship",
+            "DESC": "Space Ship Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/spaceship/play",
+        },
+        {
+            "TITLE": "Space Rocks",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/spacerocks/play",
+        },
     ],
 
     "grid_recommended": [
         {
-            "TITLE": "Game1",
-            "DESC": "Desc1",
-            "IMG": "",
+            "TITLE": "Game 1",
+            "DESC": "Game 1 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game1/play",
         },
         {
-            "TITLE": "Game2",
-            "DESC": "Desc2",
-            "IMG": "",
+            "TITLE": "Game 2",
+            "DESC": "Game 2 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game2/play",
         },
         {
-            "TITLE": "Game3",
-            "DESC": "Desc3",
-            "IMG": "",
-        }
+            "TITLE": "Game 3",
+            "DESC": "Space Ship Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game3/play",
+        },
+        {
+            "TITLE": "Game 4",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game4/play",
+        },
+        {
+            "TITLE": "Game 5",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game5/play",
+        },
+        {
+            "TITLE": "Game 6",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game6/play",
+        },
+        {
+            "TITLE": "Game 7",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game7/play",
+        },
+        {
+            "TITLE": "Game 8",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game8/play",
+        },
     ],
+
+    "grid_beauty": [
+        {
+            "TITLE": "Game 1",
+            "DESC": "Game 1 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game1/play",
+        },
+        {
+            "TITLE": "Game 2",
+            "DESC": "Game 2 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game2/play",
+        },
+        {
+            "TITLE": "Game 3",
+            "DESC": "Space Ship Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game3/play",
+        },
+        {
+            "TITLE": "Game 4",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game4/play",
+        },
+        {
+            "TITLE": "Game 5",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game5/play",
+        },
+        {
+            "TITLE": "Game 6",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game6/play",
+        },
+        {
+            "TITLE": "Game 7",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game7/play",
+        },
+        {
+            "TITLE": "Game 8",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game8/play",
+        },
+    ],
+
+    "grid_car": [
+        {
+            "TITLE": "Game 1",
+            "DESC": "Game 1 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game1/play",
+        },
+        {
+            "TITLE": "Game 2",
+            "DESC": "Game 2 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game2/play",
+        },
+        {
+            "TITLE": "Game 3",
+            "DESC": "Space Ship Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game3/play",
+        },
+        {
+            "TITLE": "Game 4",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game4/play",
+        },
+        {
+            "TITLE": "Game 5",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game5/play",
+        },
+        {
+            "TITLE": "Game 6",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game6/play",
+        },
+        {
+            "TITLE": "Game 7",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game7/play",
+        },
+        {
+            "TITLE": "Game 8",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game8/play",
+        },
+    ],
+
+    "grid_bike": [
+        {
+            "TITLE": "Game 1",
+            "DESC": "Game 1 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game1/play",
+        },
+        {
+            "TITLE": "Game 2",
+            "DESC": "Game 2 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game2/play",
+        },
+        {
+            "TITLE": "Game 3",
+            "DESC": "Space Ship Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game3/play",
+        },
+        {
+            "TITLE": "Game 4",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game4/play",
+        },
+        {
+            "TITLE": "Game 5",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game5/play",
+        },
+        {
+            "TITLE": "Game 6",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game6/play",
+        },
+        {
+            "TITLE": "Game 7",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game7/play",
+        },
+        {
+            "TITLE": "Game 8",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game8/play",
+        },
+    ],
+
+    "grid_action": [
+        {
+            "TITLE": "Game 1",
+            "DESC": "Game 1 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game1/play",
+        },
+        {
+            "TITLE": "Game 2",
+            "DESC": "Game 2 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game2/play",
+        },
+        {
+            "TITLE": "Game 3",
+            "DESC": "Space Ship Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game3/play",
+        },
+        {
+            "TITLE": "Game 4",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game4/play",
+        },
+        {
+            "TITLE": "Game 5",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game5/play",
+        },
+        {
+            "TITLE": "Game 6",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game6/play",
+        },
+        {
+            "TITLE": "Game 7",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game7/play",
+        },
+        {
+            "TITLE": "Game 8",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game8/play",
+        },
+    ],
+
+    "grid_adventure": [
+        {
+            "TITLE": "Game 1",
+            "DESC": "Game 1 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game1/play",
+        },
+        {
+            "TITLE": "Game 2",
+            "DESC": "Game 2 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game2/play",
+        },
+        {
+            "TITLE": "Game 3",
+            "DESC": "Space Ship Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game3/play",
+        },
+        {
+            "TITLE": "Game 4",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game4/play",
+        },
+        {
+            "TITLE": "Game 5",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game5/play",
+        },
+        {
+            "TITLE": "Game 6",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game6/play",
+        },
+        {
+            "TITLE": "Game 7",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game7/play",
+        },
+        {
+            "TITLE": "Game 8",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game8/play",
+        },
+    ],
+
+    "grid_card": [
+        {
+            "TITLE": "Game 1",
+            "DESC": "Game 1 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game1/play",
+        },
+        {
+            "TITLE": "Game 2",
+            "DESC": "Game 2 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game2/play",
+        },
+        {
+            "TITLE": "Game 3",
+            "DESC": "Space Ship Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game3/play",
+        },
+        {
+            "TITLE": "Game 4",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game4/play",
+        },
+        {
+            "TITLE": "Game 5",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game5/play",
+        },
+        {
+            "TITLE": "Game 6",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game6/play",
+        },
+        {
+            "TITLE": "Game 7",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game7/play",
+        },
+        {
+            "TITLE": "Game 8",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game8/play",
+        },
+    ],
+
+    "grid_controller": [
+        {
+            "TITLE": "Game 1",
+            "DESC": "Game 1 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game1/play",
+        },
+        {
+            "TITLE": "Game 2",
+            "DESC": "Game 2 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game2/play",
+        },
+        {
+            "TITLE": "Game 3",
+            "DESC": "Space Ship Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game3/play",
+        },
+        {
+            "TITLE": "Game 4",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game4/play",
+        },
+        {
+            "TITLE": "Game 5",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game5/play",
+        },
+        {
+            "TITLE": "Game 6",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game6/play",
+        },
+        {
+            "TITLE": "Game 7",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game7/play",
+        },
+        {
+            "TITLE": "Game 8",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game8/play",
+        },
+    ],
+
+    "grid_sports": [
+        {
+            "TITLE": "Game 1",
+            "DESC": "Game 1 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game1/play",
+        },
+        {
+            "TITLE": "Game 2",
+            "DESC": "Game 2 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game2/play",
+        },
+        {
+            "TITLE": "Game 3",
+            "DESC": "Space Ship Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game3/play",
+        },
+        {
+            "TITLE": "Game 4",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game4/play",
+        },
+        {
+            "TITLE": "Game 5",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game5/play",
+        },
+        {
+            "TITLE": "Game 6",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game6/play",
+        },
+        {
+            "TITLE": "Game 7",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game7/play",
+        },
+        {
+            "TITLE": "Game 8",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game8/play",
+        },
+    ],
+
+    "grid_shooting": [
+        {
+            "TITLE": "Game 1",
+            "DESC": "Game 1 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game1/play",
+        },
+        {
+            "TITLE": "Game 2",
+            "DESC": "Game 2 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game2/play",
+        },
+        {
+            "TITLE": "Game 3",
+            "DESC": "Space Ship Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game3/play",
+        },
+        {
+            "TITLE": "Game 4",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game4/play",
+        },
+        {
+            "TITLE": "Game 5",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game5/play",
+        },
+        {
+            "TITLE": "Game 6",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game6/play",
+        },
+        {
+            "TITLE": "Game 7",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game7/play",
+        },
+        {
+            "TITLE": "Game 8",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game8/play",
+        },
+    ],
+
+    "grid_puzzle": [
+        {
+            "TITLE": "Game 1",
+            "DESC": "Game 1 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game1/play",
+        },
+        {
+            "TITLE": "Game 2",
+            "DESC": "Game 2 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game2/play",
+        },
+        {
+            "TITLE": "Game 3",
+            "DESC": "Space Ship Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game3/play",
+        },
+        {
+            "TITLE": "Game 4",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game4/play",
+        },
+        {
+            "TITLE": "Game 5",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game5/play",
+        },
+        {
+            "TITLE": "Game 6",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game6/play",
+        },
+        {
+            "TITLE": "Game 7",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game7/play",
+        },
+        {
+            "TITLE": "Game 8",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game8/play",
+        },
+    ],
+
+    "grid_io": [
+        {
+            "TITLE": "Game 1",
+            "DESC": "Game 1 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game1/play",
+        },
+        {
+            "TITLE": "Game 2",
+            "DESC": "Game 2 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game2/play",
+        },
+        {
+            "TITLE": "Game 3",
+            "DESC": "Space Ship Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game3/play",
+        },
+        {
+            "TITLE": "Game 4",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game4/play",
+        },
+        {
+            "TITLE": "Game 5",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game5/play",
+        },
+        {
+            "TITLE": "Game 6",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game6/play",
+        },
+        {
+            "TITLE": "Game 7",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game7/play",
+        },
+        {
+            "TITLE": "Game 8",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game8/play",
+        },
+    ],
+
+    "grid_horror": [
+        {
+            "TITLE": "Game 1",
+            "DESC": "Game 1 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game1/play",
+        },
+        {
+            "TITLE": "Game 2",
+            "DESC": "Game 2 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game2/play",
+        },
+        {
+            "TITLE": "Game 3",
+            "DESC": "Space Ship Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game3/play",
+        },
+        {
+            "TITLE": "Game 4",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game4/play",
+        },
+        {
+            "TITLE": "Game 5",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game5/play",
+        },
+        {
+            "TITLE": "Game 6",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game6/play",
+        },
+        {
+            "TITLE": "Game 7",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game7/play",
+        },
+        {
+            "TITLE": "Game 8",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game8/play",
+        },
+    ],
+
+    "grid_escape": [
+        {
+            "TITLE": "Game 1",
+            "DESC": "Game 1 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game1/play",
+        },
+        {
+            "TITLE": "Game 2",
+            "DESC": "Game 2 Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game2/play",
+        },
+        {
+            "TITLE": "Game 3",
+            "DESC": "Space Ship Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game3/play",
+        },
+        {
+            "TITLE": "Game 4",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game4/play",
+        },
+        {
+            "TITLE": "Game 5",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game5/play",
+        },
+        {
+            "TITLE": "Game 6",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game6/play",
+        },
+        {
+            "TITLE": "Game 7",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game7/play",
+        },
+        {
+            "TITLE": "Game 8",
+            "DESC": "Space Rocks Description",
+            "IMG": "/image/favicon.ico",
+            "URL": "/games/game8/play",
+        },
+    ],
+
 }
 
 
