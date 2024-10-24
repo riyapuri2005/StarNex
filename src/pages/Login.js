@@ -65,12 +65,16 @@ function Login() {
 
 
     useEffect(() => {
+        console.log(window.pageLoaded);
         Cookies.remove('BEARER');
         removeCSS("/css/home.css");
         removeJS("/js/home.js");
         addCSS("/css/auth.css");
         addCSS("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
-        for(let i=0; i<=271;i++) { document.getElementById("spanGenerate").appendChild(document.createElement("span")) }
+        for (let i = 0; i <= 271; i++) {
+            document.getElementById("spanGenerate").appendChild(document.createElement("span"))
+        }
+
     }, []);
 
 

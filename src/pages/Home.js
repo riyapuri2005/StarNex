@@ -10,21 +10,23 @@ import removeCSS from "../elements/RemoveCSS";
 function Home() {
     const [toRender, CtoRender] = useState("")
     const navigate = useNavigate();
-
+    console.log(1);
     useEffect(() => {
         let Bearer = Cookies.get('BEARER');
         checkAuth(Bearer).then(isCorrect => {
             if (isCorrect) {
-                CtoRender(toReturn);
+                console.log(3);
                 removeCSS("/css/auth.css");
                 addCSS("/css/home.css");
                 addJS("/js/home.js");
+                CtoRender(toReturn);
             }
             else { navigate("/login"); }
         })
     }, []);
 
 
+    console.log(2);
     let toReturn = (<div className="Home" style={{backgroundColor: "black"}}>
           <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-expand-xs fixed-top">
               <div className="container-fluid ">

@@ -17,7 +17,6 @@ import SpaceRocks from "./pages/SpaceRocks";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
       <Router>
           <Routes>
               <Route path="/home" element={<HomePage />} />
@@ -35,5 +34,4 @@ root.render(
               <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
       </Router>
-  </React.StrictMode>
 );
