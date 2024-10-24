@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+iframe {
+    border: none;
+    width: 80%;
+    height: 80%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
