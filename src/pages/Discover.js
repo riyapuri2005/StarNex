@@ -104,16 +104,16 @@ function Discover() {
                         </HashLink>
                     </li>
                     <li>
-                        <a href="">
+                        <HashLink smooth to="#seasonal">
                             <i className="fa fa-fw fa-sun"></i>
                             <span>Seasonal Games</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
-                        <a href="">
+                        <HashLink href="#original">
                             <i className="fa fa-fw fa-puzzle-piece"></i>
                             <span>Original</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
                         <a href="#">
@@ -187,16 +187,16 @@ function Discover() {
                         </HashLink>
                     </li>
                     <li>
-                        <a href="">
+                        <HashLink href="#recommended">
                             <i className="fa fa-fw fa-trophy"></i>
                             <span>Recommended</span>
-                        </a>
+                        </HashLink>
                     </li>
                     <li>
-                        <a href="#">
+                        <HashLink href="#seasonal">
                             <i className="fa fa-fw fa-sun"></i>
                             <span>Seasonal Games</span>
-                        </a>
+                        </HashLink>
                     </li>
 
                     <li>

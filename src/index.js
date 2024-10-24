@@ -3,7 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 
-import './index.css';
 import HomePage from './pages/Home';
 import DiscoverPage from './pages/Discover';
 import ContactPage from './pages/Contact';
