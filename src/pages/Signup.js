@@ -126,84 +126,86 @@ function Signup() {
             <script src="/js/signup.js"></script>
 
             <section id="spanGenerate"></section>
+            <div className="flexbox">
+                <div className="container">
+                    <header>Sign Up Form</header>
+                    <form id="signupForm" noValidate onSubmit={handleRegister}>
+                        <span className="error" id="serverError"></span>
+                        <div className="field name-field">
+                            <div className="input-field">
+                                <input type="text" placeholder="Enter your Name" className="name" id="nameInput"
+                                       onChange={(e) => setName(e.target.value)}/>
+                                <span className="error" id="nameError"></span>
+                            </div>
+                        </div>
+                        <div className="field username-field">
+                            <div className="input-field">
+                                <input type="text" placeholder="Enter your Username" className="username"
+                                       id="usernameInput"
+                                       onChange={(e) => setUsername(e.target.value)}/>
+                                <span className="error" id="usernameError"></span>
+                            </div>
+                        </div>
+                        <div className="field email-field">
+                            <div className="input-field">
+                                <input type="email" placeholder="Enter your email" className="email" id="emailInput"
+                                       onChange={(e) => setEmail(e.target.value)}/>
+                                <span className="error" id="emailError"></span>
+                            </div>
+                        </div>
+                        <div className="field create-password">
+                            <div className="input-field">
+                                <input type="password" placeholder="Password" className="password" id="passwordInput"
+                                       onChange={(e) => setPassword(e.target.value)}/>
+                                <i id="peye" className="bx bx-hide show-hide" onClick={() => {
+                                    const inputField = document.getElementById("passwordInput");
+                                    const eye = document.getElementById("peye");
+                                    if (inputField.type === "password") {
+                                        inputField.type = "text";
+                                        eye.classList.remove("bx-hide");
+                                        eye.classList.add("bx-show");
+                                    } else {
+                                        inputField.type = "password";
+                                        eye.classList.remove("bx-show");
+                                        eye.classList.add("bx-hide");
+                                    }
+                                }
+                                }></i>
+                                <span className="error" id="passwordError"></span>
+                            </div>
+                        </div>
+                        <div className="field confirm-password">
+                            <div className="input-field">
+                                <input type="password" placeholder="Confirm Password" className="confirmPassword"
+                                       id="confirmPasswordInput" onChange={(e) => setConfPassword(e.target.value)}/>
+                                <i id="cpeye" className="bx bx-hide show-hide" onClick={() => {
+                                    const inputField = document.getElementById("confirmPasswordInput");
+                                    const eye = document.getElementById("cpeye");
+                                    if (inputField.type === "password") {
+                                        inputField.type = "text";
+                                        eye.classList.remove("bx-hide");
+                                        eye.classList.add("bx-show");
+                                    } else {
+                                        inputField.type = "password";
+                                        eye.classList.remove("bx-show");
+                                        eye.classList.add("bx-hide");
+                                    }
+                                }
+                                }></i>
+                                <span className="error" id="confirmPasswordError"></span>
+                            </div>
+                        </div>
+                        <div className="links">
+                            <Link to="https://gmail.com/">Forgot Password</Link>
+                            <Link to="/login">Login</Link>
+                        </div>
+                        <div className="input-field button">
+                            <input type="submit" value="Signup Now"/>
+                        </div>
+                    </form>
+                </div>
 
-            <div className="container">
-                <header>Sign Up Form</header>
-                <form id="signupForm" noValidate onSubmit={handleRegister}>
-                    <span className="error" id="serverError"></span>
-                    <div className="field name-field">
-                        <div className="input-field">
-                            <input type="text" placeholder="Enter your Name" className="name" id="nameInput"
-                                   onChange={(e) => setName(e.target.value)}/>
-                            <span className="error" id="nameError"></span>
-                        </div>
-                    </div>
-                    <div className="field username-field">
-                        <div className="input-field">
-                            <input type="text" placeholder="Enter your Username" className="username" id="usernameInput"
-                                   onChange={(e) => setUsername(e.target.value)}/>
-                            <span className="error" id="usernameError"></span>
-                        </div>
-                    </div>
-                    <div className="field email-field">
-                        <div className="input-field">
-                            <input type="email" placeholder="Enter your email" className="email" id="emailInput"
-                                   onChange={(e) => setEmail(e.target.value)}/>
-                            <span className="error" id="emailError"></span>
-                        </div>
-                    </div>
-                    <div className="field create-password">
-                        <div className="input-field">
-                            <input type="password" placeholder="Password" className="password" id="passwordInput"
-                                   onChange={(e) => setPassword(e.target.value)}/>
-                            <i id="peye" className="bx bx-hide show-hide" onClick={() => {
-                                const inputField = document.getElementById("passwordInput");
-                                const eye = document.getElementById("peye");
-                                if (inputField.type === "password") {
-                                    inputField.type = "text";
-                                    eye.classList.remove("bx-hide");
-                                    eye.classList.add("bx-show");
-                                } else {
-                                    inputField.type = "password";
-                                    eye.classList.remove("bx-show");
-                                    eye.classList.add("bx-hide");
-                                }
-                            }
-                            }></i>
-                            <span className="error" id="passwordError"></span>
-                        </div>
-                    </div>
-                    <div className="field confirm-password">
-                        <div className="input-field">
-                            <input type="password" placeholder="Confirm Password" className="confirmPassword" id="confirmPasswordInput" onChange={(e) => setConfPassword(e.target.value)}/>
-                            <i id="cpeye" className="bx bx-hide show-hide" onClick={() => {
-                                const inputField = document.getElementById("confirmPasswordInput");
-                                const eye = document.getElementById("cpeye");
-                                if (inputField.type === "password") {
-                                    inputField.type = "text";
-                                    eye.classList.remove("bx-hide");
-                                    eye.classList.add("bx-show");
-                                } else {
-                                    inputField.type = "password";
-                                    eye.classList.remove("bx-show");
-                                    eye.classList.add("bx-hide");
-                                }
-                            }
-                            }></i>
-                            <span className="error" id="confirmPasswordError"></span>
-                        </div>
-                    </div>
-                    <div className="links">
-                        <Link to="https://gmail.com/">Forgot Password</Link>
-                        <Link to="/login">Login</Link>
-                    </div>
-                    <div className="input-field button">
-                        <input type="submit" value="Signup Now"/>
-                    </div>
-                </form>
             </div>
-
-
         </div>
     );
 }
