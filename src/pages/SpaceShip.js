@@ -11,11 +11,11 @@ function SpaceShip() {
     const [toRender, CtoRender] = useState("")
     const navigate = useNavigate();
     useEffect(() => {
+        let isIframe = window.location !== window.parent.location;
         let Bearer = Cookies.get('BEARER');
         checkAuth(Bearer).then(isCorrect => {
             if (isCorrect) {
-
-                if (window.location !== window.parent.location)
+                if (isIframe)
                 {
                     CtoRender(inFrame);
                     const script = document.createElement('script');
@@ -30,7 +30,9 @@ function SpaceShip() {
                     CtoRender(outFrame);
                 }
             }
-            else { navigate("/login"); }
+            else {
+                if(isIframe){}
+                else navigate("/login"); }
         })
     }, []);
 
