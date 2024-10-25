@@ -23,7 +23,7 @@ function Contact() {
         })
     }, []);
   let toReturn = (
-      <div className="Contact" style={{backgroundColor: "black"}}>
+      <div className="Contact">
           <div className="container mt-5">
               <header>
                   <h1 style={{color:"azure"}}>Contact Us</h1>

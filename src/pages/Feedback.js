@@ -37,7 +37,7 @@ function Feedback() {
 
 
     let toReturn = (
-        <div className="Feedback" style={{backgroundColor: "black"}}>
+        <div className="Feedback">
             <section id="form-section">
                 <h1 className="h1-tag">Your Feedback Is important</h1>
 

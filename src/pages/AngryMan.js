@@ -56,7 +56,9 @@ function AngryMan() {
         </div>
     );
     let outFrame = (
-        <iframe src="/games/angryman/play" title="Embedded Page"></iframe>
+        <div className="iframeholder">
+            <iframe src="/games/angryman/play" title="Embedded Page"></iframe>
+        </div>
     )
     return toRender;
 }

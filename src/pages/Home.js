@@ -76,7 +76,7 @@ function Home() {
           <img src="/image/2astronaut.png" id="astronaut" className="parallax right-bottom-image" alt=""/>
 
           <div className="chatbot-icon">
-              <Link to="/iris"> <img src="/image/IRIS.png" alt="Chatbot"/> </Link>
+              <Link to="/iris" target={"_blank"}> <img src="/image/IRIS.png" alt="Chatbot"/> </Link>
           </div>
 
 
