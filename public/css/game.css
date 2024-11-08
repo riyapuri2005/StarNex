@@ -8,15 +8,33 @@ body {
     align-items: center;
 }
 iframe {
-    border: none;
-    width: 1280px;
-    height: 720px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 68%;
+    min-height: 80%;
+    box-sizing: border-box;
+
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+
+    overflow-clip-margin: content-box !important;
+    overflow: clip !important;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
 }
-@media (max-width: 1280px) {
-    iframe {
-        width: 100%;
-        height: auto;
-    }
+.iframeholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
