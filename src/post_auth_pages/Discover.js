@@ -7,7 +7,7 @@ import removeCSS from "../common_elements/RemoveCSS";
 import removeJS from "../common_elements/RemoveJS";
 
 
-function PreAuthDiscover() {
+function PostAuthDiscover() {
     const handleSearch = (text) => {
         let allGames = window.games;
         for (let category in allGames)
@@ -63,8 +63,8 @@ function PreAuthDiscover() {
 <nav className="navbar">
 <a href="/home">Home</a>
 <a href="/src/pre_auth_pages/Discover">Games</a>
-<a href="/PreAuthFeedback">Feedback</a>
-<a href="/PreAuthContact">Contact</a>
+<a href="/PostAuthFeedback">Feedback</a>
+<a href="/PostAuthContact">Contact</a>
 <div className="search-bar">
 <input type="text" placeholder="Search..." onChange={(e) => handleSearch(e.target.value)}/>
 <button type="submit">
@@ -339,4 +339,4 @@ function PreAuthDiscover() {
 </div>
 }
 
-export default PreAuthDiscover;
+export default PostAuthDiscover;

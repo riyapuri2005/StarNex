@@ -6,7 +6,7 @@ import removeCSS from "../common_elements/RemoveCSS";
 import removeJS from "../common_elements/RemoveJS";
 
 
-function PreAuthIris() {
+function PostAuthIris() {
     useEffect(() => {
         removeCSS("/css/game.css");
         removeCSS("/css/auth.css");
@@ -47,4 +47,4 @@ function PreAuthIris() {
 </div>
 }
 
-export default PreAuthIris;
+export default PostAuthIris;

@@ -3,7 +3,7 @@ import addCSS from "../common_elements/AddCSS";
 import addJS from "../common_elements/AddJS";
 
 
-function PreAuthContact() {
+function PostAuthContact() {
     useEffect(() => {
         addJS("/js/contact.js");
         addCSS("/css/contact.css");
@@ -85,4 +85,4 @@ Lorem, ipsum dolor.
 </div>
 }
 
-export default PreAuthContact;
+export default PostAuthContact;

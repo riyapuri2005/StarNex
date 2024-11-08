@@ -17,7 +17,6 @@ function PostAuthGameHolder({gameName}) {
         addCSS("/css/game.css");
     }, []);
 
-    return <iframe src={`/games/${gameName}/play`} title="Embedded Game"></iframe>
+    return <div className="iframeholder"><iframe src={`/games/${gameName}/play`} title="Embedded Game"></iframe></div>
 }
-
 export default PostAuthGameHolder;

@@ -5,7 +5,7 @@ import removeCSS from "../common_elements/RemoveCSS";
 import removeJS from "../common_elements/RemoveJS";
 
 
-function PreAuthFeedback() {
+function PostAuthFeedback() {
     useEffect(() => {
         removeCSS("/css/game.css");
         removeCSS("/css/auth.css");
@@ -52,4 +52,4 @@ function PreAuthFeedback() {
 </div>
 }
 
-export default PreAuthFeedback;
+export default PostAuthFeedback;

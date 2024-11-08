@@ -13,7 +13,7 @@ function PreAuthGameHolder({gameName, gameJSX}) {
         checkAuth(Bearer).then(isCorrect => {
             if (isCorrect)
             {
-                if(window.location !== window.parent.location) CtoRender(<PostAuthGameHolder gameName={gameName}/>);
+                if(window.location === window.parent.location) CtoRender(<PostAuthGameHolder gameName={gameName}/>);
                 else CtoRender(gameJSX)
             }
             else {if(window.location === window.parent.location) navigate("/login"); }

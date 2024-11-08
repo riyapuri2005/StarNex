@@ -1,6 +1,6 @@
 import {useEffect} from "react";
 
-function PreAuthSpaceRocks() {
+function PostAuthSpaceRocks() {
     useEffect(() => {
         const script = document.createElement('script');
         script.src = "/games/spacerocks/html5game/Space Rocks.js";
@@ -19,4 +19,4 @@ function PreAuthSpaceRocks() {
     </div>
 }
 
-export default PreAuthSpaceRocks;
+export default PostAuthSpaceRocks;

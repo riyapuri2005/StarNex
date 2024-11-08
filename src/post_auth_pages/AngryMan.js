@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 
-function PreAuthAngryManFrame() {
+function PostAuthAngryManFrame() {
     useEffect(() => {
         const script = document.createElement('script');
         script.src = "/games/angryman/html5game/AngryMan.js";
@@ -19,4 +19,4 @@ function PreAuthAngryManFrame() {
     </div>
 }
 
-export default PreAuthAngryManFrame;
+export default PostAuthAngryManFrame;
