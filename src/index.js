@@ -1,38 +1,38 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import HomePage from './pages/Home';
-import DiscoverPage from './pages/Discover';
-import ContactPage from './pages/Contact';
-import IrisPage from './pages/Iris';
-import FeedbackPage from './pages/Feedback';
-import LoginPage from './pages/Login';
-import SignupPage from './pages/Signup';
-import SpaceRocks from "./pages/SpaceRocks";
-import AngryMan from "./pages/AngryMan";
-import CarRush from "./pages/CarRush";
-import SpaceShip from "./pages/SpaceShip";
+import PreAuthHomePage from './pre_auth_pages/Home';
+import PreAuthDiscoverPage from './pre_auth_pages/Discover';
+import PreAuthContactPage from './pre_auth_pages/Contact';
+import PreAuthIrisPage from './pre_auth_pages/Iris';
+import PreAuthFeedbackPage from './pre_auth_pages/Feedback';
+import LoginPage from './pre_auth_pages/Login';
+import SignupPage from './pre_auth_pages/Signup';
+import GameHolder from "./pre_auth_pages/GameHolder";
+import AngryMan from "./post_auth_pages/AngryMan";
+import CarRush from "./post_auth_pages/CarRush";
+import SpaceShip from "./post_auth_pages/SpaceShip";
+import SpaceRocks from "./post_auth_pages/SpaceRocks";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
       <Router>
           <Routes>
-              <Route path="/home" element={<HomePage />} />
-              <Route path="/discover" element={<DiscoverPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/iris" element={<IrisPage />} />
-              <Route path="/feedback" element={<FeedbackPage />} />
+              <Route path="/home" element={<PreAuthHomePage />} />
+              <Route path="/discover" element={<PreAuthDiscoverPage />} />
+              <Route path="/contact" element={<PreAuthContactPage />} />
+              <Route path="/iris" element={<PreAuthIrisPage />} />
+              <Route path="/feedback" element={<PreAuthFeedbackPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
 
-              <Route path="/games/angryman/play" element={<AngryMan />} />
-              <Route path="/games/carrush/play" element={<CarRush />} />
-              <Route path="/games/spacerocks/play" element={<SpaceRocks />} />
-              <Route path="/games/spaceship/play" element={<SpaceShip />} />
-
+              <Route path="/games/angryman/play" element={<GameHolder gameName="angryman" gameJSX={<AngryMan />} />} />
+              <Route path="/games/carrush/play" element={<GameHolder gameName="carrush" gameJSX={<CarRush />} />} />
+              <Route path="/games/spaceship/play" element={<GameHolder gameName="spaceship" gameJSX={<SpaceShip />} />} />
+              <Route path="/games/spacerocks/play" element={<GameHolder gameName="spacerocks" gameJSX={<SpaceRocks />} />} />
 
               <Route path="/games/*" element={<Navigate to="/discover" />} />
               <Route path="*" element={<Navigate to="/home" />} />

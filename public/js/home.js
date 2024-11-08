@@ -1,25 +1,20 @@
+window.stars = document.getElementById('stars');
+window.mountains_behind = document.getElementById('mountains_behind');
+window.text1 = document.getElementById('text1');
+window.text2 = document.getElementById('text2');
+window.btn = document.getElementById('btn');
+window.mountains_front1 = document.getElementById('mountains_front1');
+window.mountains_front2 = document.getElementById('mountains_front2');
+window.astronaut = document.getElementById('astronaut');
 
-if (stars === 'undefined') {
-    let stars, mountains_behind, text1, text2, btn, mountains_front1, mountains_front2, astronaut, initialTextOffsetTop, initialTextOffsetTop2;
-}
-
-stars = document.getElementById('stars');
-mountains_behind = document.getElementById('mountains_behind');
-text1 = document.getElementById('text1');
-text2 = document.getElementById('text2');
-btn = document.getElementById('btn');
-mountains_front1 = document.getElementById('mountains_front1');
-mountains_front2 = document.getElementById('mountains_front2');
-astronaut = document.getElementById('astronaut');
-
-initialTextOffsetTop = text1.offsetTop;
-initialTextOffsetTop2 = text2.offsetTop;
+window.initialTextOffsetTop = window.text1.offsetTop;
+window.initialTextOffsetTop2 = window.text2.offsetTop;
 window.addEventListener('scroll', function(){
     let value = window.scrollY;
-    stars.style.left = value * 0.25 + 'px';
-    text1.style.top = (initialTextOffsetTop + value * 0.5) + 'px';
-    text2.style.top = (initialTextOffsetTop2 + value * 0.5) + 'px';
-    btn.style.bottom = value * 1.05 + 'px';
-    mountains_behind.style.top = value * 0.45 + 'px';
-    btn.style.marginTop = value * 1.25 + 'px';
+    window.stars.style.left = value * 0.25 + 'px';
+    window.text1.style.top = (window.initialTextOffsetTop + value * 0.5) + 'px';
+    window.text2.style.top = (window.initialTextOffsetTop2 + value * 0.5) + 'px';
+    window.btn.style.bottom = value * 1.05 + 'px';
+    window.mountains_behind.style.top = value * 0.45 + 'px';
+    window.btn.style.marginTop = value * 1.25 + 'px';
 })

@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import Cookies from "js-cookie";
-import addCSS from "../elements/AddCSS";
 import {useNavigate} from "react-router-dom";
-import removeJS from "../elements/RemoveJS";
-import removeCSS from "../elements/RemoveCSS";
+import Cookies from "js-cookie";
+import addCSS from "../common_elements/AddCSS";
+import removeJS from "../common_elements/RemoveJS";
+import removeCSS from "../common_elements/RemoveCSS";
 
 
 function Login() {

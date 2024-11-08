@@ -38,7 +38,7 @@ body::before {
   height: 100%;
   background: rgba(57, 101, 138, 0.2); /* Light blue overlay */
   animation: pulse 2s infinite; /* Pulsing effect */
-  z-index: -1; /* Position behind other elements */
+  z-index: -1; /* Position behind other common_elements */
 }
 
 .chatbot {

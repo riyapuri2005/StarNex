@@ -1,10 +1,10 @@
 import {Link, useNavigate} from "react-router-dom";
 import React, {useEffect, useState} from 'react';
 import Cookies from 'js-cookie';
-import addCSS from "../elements/AddCSS";
-import removeCSS from "../elements/RemoveCSS";
-import removeJS from "../elements/RemoveJS";
-import addJS from "../elements/AddJS";
+import addCSS from "../common_elements/AddCSS";
+import removeCSS from "../common_elements/RemoveCSS";
+import removeJS from "../common_elements/RemoveJS";
+import addJS from "../common_elements/AddJS";
 
 
 function Signup() {

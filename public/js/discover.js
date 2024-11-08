@@ -1,7 +1,7 @@
-let menubar = document.querySelector('#menu-bar');
-let navbar = document.querySelector('.navbar');
+window.menubar = document.querySelector('#menu-bar');
+window.navbar = document.querySelector('.navbar');
 
-menubar.onclick = () =>{
-    menubar.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
+window.menubar.onclick = () =>{
+    window.menubar.classList.toggle('fa-times');
+    window.navbar.classList.toggle('active');
 }

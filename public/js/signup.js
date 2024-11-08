@@ -21,7 +21,7 @@ function validateForm(event) {
 
     let isValid = true;
 
-// Get all input elements
+// Get all input common_elements
     const nameInput = document.getElementById('name');
     const usernameInput = document.getElementById('username');
     const emailInput = document.getElementById('email');
