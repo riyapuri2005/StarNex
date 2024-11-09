@@ -7,8 +7,8 @@ function PreAuthIris() {
     const [toRender, CtoRender] = useState("Checking Authentication")
     const navigate = useNavigate();
     useEffect(() => {
-        checkAuth().then(isCorrect => {
-            if (isCorrect) {CtoRender(<PostAuthIris />);}
+        checkAuth().then(userData => {
+            if (userData!==null) {CtoRender(<PostAuthIris />);}
             else { navigate("/login"); }
         })
     }, []);

@@ -7,8 +7,8 @@ function PreAuthDiscover() {
     const [toRender, CtoRender] = useState("Checking Authentication")
     const navigate = useNavigate();
     useEffect(() => {
-        checkAuth().then(isCorrect => {
-            if (isCorrect) {CtoRender(<PostAuthDiscover />);}
+        checkAuth().then(userData => {
+            if (userData!==null) {CtoRender(<PostAuthDiscover />);}
             else { console.log("INCORERCT AUTH"); navigate("/login"); }
         })
     }, []);

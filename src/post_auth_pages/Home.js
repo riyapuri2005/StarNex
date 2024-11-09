@@ -1,12 +1,13 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import addJS from "../common_elements/AddJS";
 import addCSS from "../common_elements/AddCSS";
 import removeCSS from "../common_elements/RemoveCSS";
 import removeJS from "../common_elements/RemoveJS";
 
-
-function PostAuthHome() {
+function PostAuthHome(props) {
+    const [playerName, setPlayerName] = useState("");
+    const [playerScore, setPlayerScore] = useState(0);
     useEffect(() => {
         removeCSS("/css/game.css");
         removeCSS("/css/auth.css");
@@ -18,6 +19,8 @@ function PostAuthHome() {
         removeJS("/js/discover.js");
         addCSS("/css/home.css");
         addJS("/js/home.js");
+        setPlayerName(props.playerData.playerName)
+        setPlayerScore(props.playerData.playerScore)
     }, []);
 
 
@@ -29,8 +32,8 @@ function PostAuthHome() {
 className="d-inline-block align-text-top"/>
 </Link>
 <div className="navbar-nav ms-auto d-flex align-items-center" id="navbarSupportedContent">
-    <p className="usertext"> Hi @Angel </p>
-    <p className="usertext"> Score : 1000 </p>
+    <p className="usertext"> Hi @{playerName} </p>
+    <p className="usertext"> Score : {playerScore} </p>
 <Link className="nav-link" to="#">
 <img src="/image/notification.png" id="notifications" alt="Notifications" width="auto"
 height="30"/>

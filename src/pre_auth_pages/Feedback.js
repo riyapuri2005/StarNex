@@ -7,8 +7,8 @@ function PreAuthFeedback() {
     const [toRender, CtoRender] = useState("Checking Authentication")
     const navigate = useNavigate();
     useEffect(() => {
-        checkAuth().then(isCorrect => {
-            if (isCorrect) {CtoRender(<PostAuthFeedback />);}
+        checkAuth().then(userData => {
+            if (userData!==null) {CtoRender(<PostAuthFeedback />);}
             else { navigate("/login"); }
         })
     }, []);

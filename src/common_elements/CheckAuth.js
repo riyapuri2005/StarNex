@@ -12,13 +12,13 @@ const checkAuth = async () => {
         const result = await response.json();
         if (result["STATUS"] >= 0) {
             Cookies.set('BEARER', Cookies.get('BEARER'), {expires: 7, path: '/' });
-            return true;
+            return result;
         } else {
-            return false;
+            return null;
         }
     } catch (error) {
         console.error('Error:', error);
-        return false;
+        return null;
     }
 }
 

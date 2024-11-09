@@ -7,8 +7,8 @@ function PreAuthGameHolder({gameName, gameJSX}) {
     const [toRender, CtoRender] = useState("Checking Authentication")
     const navigate = useNavigate();
     useEffect(() => {
-        checkAuth().then(isCorrect => {
-            if (isCorrect)
+        checkAuth().then(userData => {
+            if (userData!==null)
             {
                 if(window.location === window.parent.location) CtoRender(<PostAuthGameHolder gameName={gameName}/>);
                 else CtoRender(gameJSX)
