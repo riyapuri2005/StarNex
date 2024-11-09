@@ -1,9 +1,7 @@
 import React, {useEffect} from 'react';
-import SubmitScore from "../common_elements/SubmitScore";
 
 function PostAuthAngryManFrame() {
     useEffect(() => {
-        window["updateScore"] = SubmitScore;
         const script = document.createElement('script');
         script.src = "/games/angryman/html5game/AngryMan.js";
         script.onload  = () => {window.GameMaker_Init();};

@@ -60,7 +60,9 @@ def loginRequired(continueFunction):
 @baseApp.route("/checkauth", methods=["POST"])
 @loginRequired
 def forceCheckAuth(userID, deviceID):
-    response = {"STATUS":0}
+    received = SQLConn.execute(f"SELECT name, score from playerinfo where userID=\"{userID}\"")
+    if received: received = received[0]
+    response = {"STATUS":0, "NAME":received.get("name", "-nameless-"), "SCORE":received.get("score", 0)}
     print(response)
     return response
 
@@ -82,6 +84,7 @@ def discoverRoute(userID, deviceID):
 @loginRequired
 def addScore(userID, deviceID):
     scoreToAdd = int(request.get_json().get("SCORE"))
+    print(userID, deviceID, scoreToAdd)
     SQLConn.execute(f"UPDATE playerinfo set score=score+{scoreToAdd} where userID=\"{userID}\"")
     return {"STATUS": "OK"}
 

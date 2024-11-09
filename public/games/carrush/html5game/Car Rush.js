@@ -661,7 +661,7 @@ function updateHighscore() {
     }
 }
 
-function window.init() {
+function init() {
     game.style.width = width + "px";
     game.style.height = height + "px";
 
@@ -720,3 +720,4 @@ function window.init() {
         }
     })();
 }
+window.init = init;
