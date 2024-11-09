@@ -29,6 +29,8 @@ function PostAuthHome() {
 className="d-inline-block align-text-top"/>
 </Link>
 <div className="navbar-nav ms-auto d-flex align-items-center" id="navbarSupportedContent">
+    <p className="usertext"> Hi @Angel </p>
+    <p className="usertext"> Score : 1000 </p>
 <Link className="nav-link" to="#">
 <img src="/image/notification.png" id="notifications" alt="Notifications" width="auto"
 height="30"/>

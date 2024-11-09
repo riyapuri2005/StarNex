@@ -54,6 +54,13 @@
     }
 }
 
+.usertext{
+    color:rgb(172,204,242);
+    font-weight: bold;
+    display: flex;
+    vertical-align: middle;
+}
+
 section{
     position:relative;
     width:100%;
