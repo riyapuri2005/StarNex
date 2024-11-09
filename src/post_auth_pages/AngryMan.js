@@ -1,14 +1,15 @@
 import React, {useEffect} from 'react';
+import SubmitScore from "../common_elements/SubmitScore";
 
 function PostAuthAngryManFrame() {
     useEffect(() => {
+        window["updateScore"] = SubmitScore;
         const script = document.createElement('script');
         script.src = "/games/angryman/html5game/AngryMan.js";
         script.onload  = () => {window.GameMaker_Init();};
         const existingScript = document.querySelector('script[src="/games/angryman/html5game/AngryMan.js"]');
         if (!existingScript) { document.head.appendChild(script); }
     }, []);
-
 
     return <div className="AngryMan">
         <div className="gm4html5_div_class" id="gm4html5_div_id">

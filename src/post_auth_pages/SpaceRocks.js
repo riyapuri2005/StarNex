@@ -1,7 +1,9 @@
 import {useEffect} from "react";
+import SubmitScore from "../common_elements/SubmitScore";
 
 function PostAuthSpaceRocks() {
     useEffect(() => {
+        window["updateScore"] = SubmitScore;
         const script = document.createElement('script');
         script.src = "/games/spacerocks/html5game/Space Rocks.js";
         script.onload  = () => {window.GameMaker_Init();};

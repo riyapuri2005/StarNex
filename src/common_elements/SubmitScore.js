@@ -1,16 +1,15 @@
 import Cookies from "js-cookie";
 
-const fetchGames = async () => {
+const submitScore = async (newScore) => {
     try {
-        const response = await fetch('http://localhost:5000/discover', {
+        await fetch('http://localhost:5000/submitscore', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 "Bearer": Cookies.get('BEARER')
-            }
+            },
+            body: JSON.stringify({"SCORE":newScore}),
         });
-
-        return response.json();
 
     } catch (error) {
         console.error('Error:', error);
@@ -18,4 +17,4 @@ const fetchGames = async () => {
     }
 }
 
-export default fetchGames;
+export default submitScore;

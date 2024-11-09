@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import Cookies from "js-cookie";
 import checkAuth from "../common_elements/CheckAuth";
 import PostAuthDiscover from "../post_auth_pages/Discover";
 
@@ -8,9 +7,9 @@ function PreAuthDiscover() {
     const [toRender, CtoRender] = useState("Checking Authentication")
     const navigate = useNavigate();
     useEffect(() => {
-        checkAuth(Cookies.get('BEARER')).then(isCorrect => {
+        checkAuth().then(isCorrect => {
             if (isCorrect) {CtoRender(<PostAuthDiscover />);}
-            else { navigate("/login"); }
+            else { console.log("INCORERCT AUTH"); navigate("/login"); }
         })
     }, []);
     return toRender;

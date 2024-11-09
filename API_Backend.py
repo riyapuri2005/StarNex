@@ -17,8 +17,8 @@ CORS(baseApp, origins=["http://localhost:3000"])
 def createNewUser(name, email, username, password):
     while True:
         userID = strGen.AlphaNumeric(50, 50)
-        if SQLConn.execute(f"SELECT userID from playerauth where userID=\"{userID}\""): continue
-        SQLConn.execute(f"INSERT INTO playerauth values (\"{userID}\", \"{name}\", \"{email}\", \"{username}\", \"{generate_password_hash(password)}\")")
+        if SQLConn.execute(f"SELECT userID from playerinfo where userID=\"{userID}\""): continue
+        SQLConn.execute(f"INSERT INTO playerinfo values (\"{userID}\", \"{name}\", \"{email}\", \"{username}\", \"{generate_password_hash(password)}\", 0)")
         bearer = createNewDevice(userID)
         return userID, bearer
 
@@ -67,7 +67,8 @@ def forceCheckAuth(userID, deviceID):
 
 
 @baseApp.route("/discover", methods=["POST"])
-def discoverRoute():
+@loginRequired
+def discoverRoute(userID, deviceID):
     knownGames = {}
     for item in SQLConn.execute("SELECT * FROM availablegames"):
         if item["category"] not in knownGames: knownGames[item["category"]] = []
@@ -77,17 +78,26 @@ def discoverRoute():
 
 
 
+@baseApp.route("/submitscore", methods=["POST"])
+@loginRequired
+def addScore(userID, deviceID):
+    scoreToAdd = int(request.get_json().get("SCORE"))
+    SQLConn.execute(f"UPDATE playerinfo set score=score+{scoreToAdd} where userID=\"{userID}\"")
+    return {"STATUS": "OK"}
+
+
+
 @baseApp.route("/signup", methods=["POST"])
 def signupRoute():
-    name = request.get_json()["NAME"]
-    email = request.get_json()["EMAIL"]
-    username = request.get_json()["UNAME"]
-    password = request.get_json()["PASSWORD"]
+    name = request.get_json().get("NAME", "")
+    email = request.get_json().get("EMAIL", "")
+    username = request.get_json().get("UNAME", "")
+    password = request.get_json().get("PASSWORD", "")
     if not name:
         response = {"STATUS":-1, "REASON":"NAME INVALID"}
-    elif (not email) or SQLConn.execute(f"SELECT email from playerauth where email=\"{email}\""):
+    elif (not email) or SQLConn.execute(f"SELECT email from playerinfo where email=\"{email}\""):
         response = {"STATUS":-1, "REASON":"EMAIL INVALID"}
-    elif (not username) or SQLConn.execute(f"SELECT username from playerauth where username=\"{username}\""):
+    elif (not username) or SQLConn.execute(f"SELECT username from playerinfo where username=\"{username}\""):
         response = {"STATUS":-1, "REASON":"USERNAME INVALID"}
     elif not password:
         response = {"STATUS":-1, "REASON":"PASSWORD INVALID"}
@@ -101,14 +111,14 @@ def signupRoute():
 
 @baseApp.route("/login", methods=["POST"])
 def loginRoute():
-    username = request.get_json()["UNAME"]
-    password = request.get_json()["PASSWORD"]
+    username = request.get_json().get("UNAME")
+    password = request.get_json().get("PASSWORD")
     if not username:
         response = {"STATUS":-1, "REASON":"USERNAME INVALID"}
     elif not password:
         response = {"STATUS":-1, "REASON":"PASSWORD INVALID"}
     else:
-        received = SQLConn.execute(f"SELECT userID, pwHash from playerauth where username=\"{username}\"")
+        received = SQLConn.execute(f"SELECT userID, pwHash from playerinfo where username=\"{username}\"")
         if received:
             received = received[0]
             userID = received["userID"].decode()

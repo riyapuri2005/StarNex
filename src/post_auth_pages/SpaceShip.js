@@ -1,7 +1,9 @@
 import React, {useEffect} from 'react';
+import SubmitScore from "../common_elements/SubmitScore";
 
 function PostAuthSpaceShip() {
     useEffect(() => {
+        window["updateScore"] = SubmitScore;
         const script = document.createElement('script');
         script.src = "/games/spaceship/html5game/rock and arrow.js";
         script.onload  = () => {window.GameMaker_Init();};

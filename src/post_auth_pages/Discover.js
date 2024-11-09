@@ -6,7 +6,6 @@ import fetchGames from "../common_elements/FetchGames";
 import removeCSS from "../common_elements/RemoveCSS";
 import removeJS from "../common_elements/RemoveJS";
 
-
 function PostAuthDiscover() {
     const handleSearch = (text) => {
         let allGames = window.games;

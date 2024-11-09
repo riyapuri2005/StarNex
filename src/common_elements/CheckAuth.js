@@ -1,17 +1,17 @@
 import Cookies from "js-cookie";
 
-const checkAuth = async (Bearer) => {
+const checkAuth = async () => {
     try {
         const response = await fetch('http://localhost:5000/checkauth', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                "Bearer": Bearer
+                "Bearer": Cookies.get('BEARER')
             }
         });
         const result = await response.json();
         if (result["STATUS"] >= 0) {
-            Cookies.set('BEARER', Bearer, {expires: 30});
+            Cookies.set('BEARER', Cookies.get('BEARER'), {expires: 7});
             return true;
         } else {
             return false;
