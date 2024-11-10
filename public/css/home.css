@@ -55,10 +55,14 @@
 }
 
 .usertext{
+    margin-top: 10px;
     color:rgb(172,204,242);
     font-weight: bold;
-    display: flex;
-    vertical-align: middle;
+    vertical-align: text-top !important;
+    display: inline-block !important;
+    font-size: 20px !important;
+    margin-right: 2vh !important;
+
 }
 
 section{
