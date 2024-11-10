@@ -5,6 +5,7 @@ from gevent.pywsgi import WSGIServer
 from functools import wraps
 from flask import Flask, request
 from flask_cors import CORS
+from time import sleep
 from werkzeug.security import check_password_hash, generate_password_hash
 from randomisedString import Generator as STR_GEN
 from pooledMySQL import Manager as SQL_MANAGER
@@ -12,7 +13,7 @@ from pooledMySQL import Manager as SQL_MANAGER
 
 
 strGen = STR_GEN()
-SQLConn = SQL_MANAGER("starnex", "12345678", "starnex", "bhindi1.ddns.net", 3308, logOnTerminal=4)
+SQLConn = SQL_MANAGER("starnex", "12345678", "starnex", logOnTerminal=4)
 baseApp = Flask(__name__)
 CORS(baseApp, origins=["http://localhost:3000"])
 
@@ -42,6 +43,7 @@ def createNewDevice(userID):
 def loginRequired(continueFunction):
     @wraps(continueFunction)
     def wrapper():
+        sleep(3)
         bearer = request.headers.get("Bearer", "")
         userID = None
         deviceID = None

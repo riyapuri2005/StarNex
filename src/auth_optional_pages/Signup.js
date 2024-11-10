@@ -5,6 +5,7 @@ import addCSS from "../common_elements/AddCSS";
 import removeCSS from "../common_elements/RemoveCSS";
 import removeJS from "../common_elements/RemoveJS";
 import addJS from "../common_elements/AddJS";
+import ClearAllScripts from "../common_elements/ClearAllScripts";
 
 
 function Signup() {
@@ -113,14 +114,7 @@ function Signup() {
 
     useEffect(() => {
         Cookies.remove('BEARER');
-        removeCSS("/css/game.css");
-        removeCSS("/css/home.css");
-        removeCSS("/css/discover.css");
-        removeCSS("/css/feedback.css");
-        removeCSS("/css/iris.css");
-        removeJS("/js/iris.js");
-        removeJS("/js/home.js");
-        removeJS("/js/discover.js");
+        ClearAllScripts();
         addJS("/js/signup.js");
         addCSS("/css/auth.css");
         addCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");

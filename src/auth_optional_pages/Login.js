@@ -4,6 +4,7 @@ import Cookies from "js-cookie";
 import addCSS from "../common_elements/AddCSS";
 import removeJS from "../common_elements/RemoveJS";
 import removeCSS from "../common_elements/RemoveCSS";
+import ClearAllScripts from "../common_elements/ClearAllScripts";
 
 
 function Login() {
@@ -50,7 +51,7 @@ function Login() {
                 });
                 const result = await response.json();
                 if (result["STATUS"]>=0) {
-                    Cookies.set('BEARER', result["BEARER"], { expires: 30 });
+                    Cookies.set('BEARER', result["BEARER"], { expires: 7 });
                     navigate("/home");
                 } else {
                     showError(null, serverError, result["REASON"]);
@@ -64,18 +65,11 @@ function Login() {
 
     useEffect(() => {
         Cookies.remove('BEARER');
-        removeCSS("/css/game.css");
-        removeCSS("/css/home.css");
-        removeCSS("/css/discover.css");
-        removeCSS("/css/feedback.css");
-        removeCSS("/css/iris.css");
-        removeJS("/js/iris.js");
-        removeJS("/js/home.js");
-        removeJS("/js/discover.js");
+        ClearAllScripts();
         addCSS("/css/auth.css");
         addCSS("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
         for (let i = 0; i <= 271; i++) { document.getElementById("spanGenerate").appendChild(document.createElement("span")) }
-    }, []);
+    });
 
 
     return (
