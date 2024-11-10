@@ -1,6 +1,3 @@
-// Debugging helper
-console.log("Script is running!");
-
 // Show error message
 function showError(input, message) {
     const errorSpan = input.parentElement.querySelector('.error');
@@ -27,15 +24,6 @@ function validateForm(event) {
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirmPassword');
-
-// Debugging: log input values
-    console.log("Form values:", {
-        name: nameInput.value,
-        username: usernameInput.value,
-        email: emailInput.value,
-        password: passwordInput.value,
-        confirmPassword: confirmPasswordInput.value
-    });
 
 // Name validation
     if (nameInput.value.trim() === '') {
@@ -78,18 +66,10 @@ function validateForm(event) {
         clearError(confirmPasswordInput);
     }
 
-// Submit form if valid
     if (isValid) {
-        console.log("Form is valid! Proceeding to submit...");
         alert("Form submitted successfully!");
-// You can now submit the form or redirect to another page
-    } else {
-        console.log("Form is invalid. Errors were found.");
     }
 }
 
 // Attach form validation after the DOM has loaded
-window.addEventListener('DOMContentLoaded', function() {
-    console.log("DOM fully loaded and parsed.");
-    document.getElementById('signupForm').addEventListener('submit', validateForm);
-});
+window.addEventListener('DOMContentLoaded', function() {document.getElementById('signupForm').addEventListener('submit', validateForm);});

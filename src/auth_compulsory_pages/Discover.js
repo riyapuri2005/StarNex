@@ -3,10 +3,9 @@ import {HashLink} from "react-router-hash-link";
 import addCSS from "../common_elements/AddCSS";
 import addJS from "../common_elements/AddJS";
 import fetchGames from "../common_elements/FetchGames";
-import removeCSS from "../common_elements/RemoveCSS";
-import removeJS from "../common_elements/RemoveJS";
+import {Link} from "react-router-dom";
 
-function PostAuthDiscover() {
+function Discover() {
     const handleSearch = (text) => {
         let allGames = window.games;
         for (let category in allGames)
@@ -42,28 +41,22 @@ function PostAuthDiscover() {
             for (const [category, gameList] of Object.entries(e)) { receivedGames[category] = gameList; }
             window.games = receivedGames;
             handleSearch("");
+            window.scrollTo(0, 0);
         });
-        removeCSS("/css/game.css");
-        removeCSS("/css/auth.css");
-        removeCSS("/css/home.css");
-        removeCSS("/css/feedback.css");
-        removeCSS("/css/iris.css");
-        removeJS("/js/iris.js");
-        removeJS("/js/home.js");
         addCSS("/css/discover.css");
         addJS("/js/discover.js");
         addCSS("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
         addCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
-    }, []);
+    });
 
     return <div className="Discover">
 <header>
 <div id="menu-bar" className="fas fa-bars"></div>
 <nav className="navbar">
-<a href="/home">Home</a>
-<a href="/src/pre_auth_pages/Discover">Games</a>
-<a href="/PostAuthFeedback">Feedback</a>
-<a href="/PostAuthContact">Contact</a>
+<Link to="/home">Home</Link>
+<Link to="/discover">Games</Link>
+<Link to="/feedback">Feedback</Link>
+<Link to="/contact">Contact</Link>
 <div className="search-bar">
 <input type="text" placeholder="Search..." onChange={(e) => handleSearch(e.target.value)}/>
 <button type="submit">
@@ -338,4 +331,4 @@ function PostAuthDiscover() {
 </div>
 }
 
-export default PostAuthDiscover;
+export default Discover;

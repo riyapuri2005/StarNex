@@ -1,3 +1,7 @@
+from gevent.monkey import patch_all
+patch_all()
+
+from gevent.pywsgi import WSGIServer
 from functools import wraps
 from flask import Flask, request
 from flask_cors import CORS
@@ -8,7 +12,7 @@ from pooledMySQL import Manager as SQL_MANAGER
 
 
 strGen = STR_GEN()
-SQLConn = SQL_MANAGER("starnex", "12345678", "starnex", "bhindi1.ddns.net", 3308)
+SQLConn = SQL_MANAGER("starnex", "12345678", "starnex", "bhindi1.ddns.net", 3308, logOnTerminal=4)
 baseApp = Flask(__name__)
 CORS(baseApp, origins=["http://localhost:3000"])
 
@@ -49,7 +53,6 @@ def loginRequired(continueFunction):
                 deviceID = received["deviceID"].decode()
         if userID and deviceID:
             response = continueFunction(userID, deviceID)
-            print(response)
             return response
         else:
             return {"STATUS":-1, "REASON":"AUTH REQUIRED"}
@@ -136,6 +139,4 @@ def loginRoute():
     return response
 
 
-
-baseApp.run("0.0.0.0", 5000)
-
+WSGIServer(('0.0.0.0', 5000,), baseApp, log=None).serve_forever()

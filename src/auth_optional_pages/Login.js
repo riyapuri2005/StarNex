@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Cookies from "js-cookie";
 import addCSS from "../common_elements/AddCSS";
 import removeJS from "../common_elements/RemoveJS";
@@ -7,8 +7,6 @@ import removeCSS from "../common_elements/RemoveCSS";
 
 
 function Login() {
-
-
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -117,8 +115,8 @@ function Login() {
                         </div>
 
                         <div className="links">
-                            <a href="https://gmail.com/">Forgot Password</a>
-                            <a href="/signup">Signup</a>
+                            <Link to="https://gmail.com/">Forgot Password</Link>
+                            <Link to="/signup">Signup</Link>
                         </div>
 
                         <div className="input-field button">

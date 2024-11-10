@@ -2,26 +2,16 @@ import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import addJS from "../common_elements/AddJS";
 import addCSS from "../common_elements/AddCSS";
-import removeCSS from "../common_elements/RemoveCSS";
-import removeJS from "../common_elements/RemoveJS";
 
-function PostAuthHome(props) {
+function Home(props) {
     const [playerName, setPlayerName] = useState("");
     const [playerScore, setPlayerScore] = useState(0);
     useEffect(() => {
-        removeCSS("/css/game.css");
-        removeCSS("/css/auth.css");
-        removeCSS("/css/discover.css");
-        removeCSS("/css/feedback.css");
-        removeCSS("/css/iris.css");
-        removeJS("/js/iris.js");
-        removeJS("/js/home.js");
-        removeJS("/js/discover.js");
         addCSS("/css/home.css");
         addJS("/js/home.js");
         setPlayerName(props.playerData.playerName)
         setPlayerScore(props.playerData.playerScore)
-    }, []);
+    }, [props.playerData]);
 
 
     return <div className="Home" style={{backgroundColor: "black"}}>
@@ -126,7 +116,7 @@ today and experience the best in gaming entertainment!
 <div className="footer-content">
 <h3>Quick Links</h3>
 <ul className="list">
-<li><Link to="/signUp"></Link>Register</li>
+<li><Link to="/signup">Register</Link></li>
 <li><Link to="/discover">Discover</Link></li>
 <li><Link to="/iris">IrisAI</Link></li>
 <li><Link to="/feedback">Feedback</Link></li>
@@ -158,4 +148,4 @@ alt="yt" style={{height: '30px', width: '30px'}}/></Link></li>
 </div>
 }
 
-export default PostAuthHome;
+export default Home;

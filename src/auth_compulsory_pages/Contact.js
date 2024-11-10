@@ -1,15 +1,16 @@
 import {useEffect} from "react";
 import addCSS from "../common_elements/AddCSS";
 import addJS from "../common_elements/AddJS";
+import {Link} from "react-router-dom";
 
 
-function PostAuthContact() {
+function Contact() {
     useEffect(() => {
         addJS("/js/contact.js");
         addCSS("/css/contact.css");
         addCSS("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
         addCSS("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&display=swap");
-    }, []);
+    });
 
     return <div className="Contact" style={{backgroundColor: "black"}}>
 <div className="container mt-5">
@@ -75,7 +76,7 @@ Lorem, ipsum dolor.
 
 <div className="media">
 <ul>
-<li><i className="fa fa-facebook-square fa-2x" aria-hidden="true"><a href=""></a></i></li>
+<li><i className="fa fa-facebook-square fa-2x" aria-hidden="true"><Link to=""></Link></i></li>
 <li><i className="fa fa-instagram fa-2x" aria-hidden="true"></i></li>
 <li><i className="fa fa-whatsapp fa-2x" aria-hidden="true"></i></li>
 <li><i className="fa fa-twitter-square fa-2x" aria-hidden="true"></i></li>
@@ -85,4 +86,4 @@ Lorem, ipsum dolor.
 </div>
 }
 
-export default PostAuthContact;
+export default Contact;

@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
 
-function PostAuthSpaceShip() {
+function SpaceShip() {
     useEffect(() => {
         const script = document.createElement('script');
         script.src = "/games/spaceship/html5game/rock and arrow.js";
         script.onload  = () => {window.GameMaker_Init();};
         const existingScript = document.querySelector('script[src="/games/spaceship/html5game/rock and arrow.js"]');
         if (!existingScript) { document.head.appendChild(script); }
-    }, []);
+    });
 
 
     return <div className="SpaceShip">
@@ -19,4 +19,4 @@ function PostAuthSpaceShip() {
         </div>
 }
 
-export default PostAuthSpaceShip;
+export default SpaceShip;

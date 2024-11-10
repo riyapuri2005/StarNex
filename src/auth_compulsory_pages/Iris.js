@@ -1,26 +1,13 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {useEffect} from "react";
 import addCSS from "../common_elements/AddCSS";
 import addJS from "../common_elements/AddJS";
-import removeCSS from "../common_elements/RemoveCSS";
-import removeJS from "../common_elements/RemoveJS";
 
-
-function PostAuthIris() {
+function Iris() {
     useEffect(() => {
-        removeCSS("/css/game.css");
-        removeCSS("/css/auth.css");
-        removeCSS("/css/home.css");
-        removeCSS("/css/discover.css");
-        removeCSS("/css/feedback.css");
-        removeCSS("/css/iris.css");
-        removeJS("/js/iris.js");
-        removeJS("/js/home.js");
-        removeJS("/js/discover.js");
         addJS("/js/iris.js");
         addCSS("/css/iris.css");
         addCSS("https://fonts.googleapis.com/css?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
-    }, []);
+    });
 
 
 
@@ -47,4 +34,4 @@ function PostAuthIris() {
 </div>
 }
 
-export default PostAuthIris;
+export default Iris;

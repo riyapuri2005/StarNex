@@ -2,7 +2,6 @@ window.chatInput = document.querySelector(".chat-input textarea");
 window.sendChatBtn = document.querySelector(".chat-input span");
 window.chatbox = document.querySelector(".chatbox");
 
-let userMessage;
 
 // Predefined responses for the chatbot
 const predefinedResponses = {
@@ -31,20 +30,20 @@ window.createChatLi = (message, className) => {
 };
 
 // Function to generate a response based on predefined responses
-window.generateResponse = (incomingChatLi, userMessage) => {
+window.generateResponse = (incomingChatLi) => {
     const messageElement = incomingChatLi.querySelector("p");
 
     // Convert user message to lowercase and check for predefined response
     // Update the incoming message with the response
-    messageElement.textContent = predefinedResponses[userMessage.toLowerCase()] || "Oops! I don't understand that. Please try again.";
+    messageElement.textContent = predefinedResponses[window.userMessage.toLowerCase()] || "Oops! I don't understand that. Please try again.";
 };
 
 window.handleChat = () => {
-    userMessage = window.chatInput.value.trim();
-    if (!userMessage) return;
+    window.userMessage = window.chatInput.value.trim();
+    if (!window.userMessage) return;
 
     // Append the outgoing message (user message)
-    window.chatbox.appendChild(window.createChatLi(userMessage, "outgoing"));
+    window.chatbox.appendChild(window.createChatLi(window.userMessage, "outgoing"));
 
     setTimeout(() => {
         // Create and append the "Thinking..." message for the incoming chat
@@ -52,7 +51,7 @@ window.handleChat = () => {
         window.chatbox.appendChild(incomingChatLi);
 
         // Generate the response based on predefined responses
-        window.generateResponse(incomingChatLi, userMessage);
+        window.generateResponse(incomingChatLi, window.userMessage);
     }, 600);
 
     // Clear the chat input after sending the message

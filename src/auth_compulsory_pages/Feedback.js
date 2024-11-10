@@ -1,26 +1,16 @@
 import {useEffect} from "react";
 import addCSS from "../common_elements/AddCSS";
 import addJS from "../common_elements/AddJS";
-import removeCSS from "../common_elements/RemoveCSS";
-import removeJS from "../common_elements/RemoveJS";
 
 
-function PostAuthFeedback() {
+function Feedback() {
     useEffect(() => {
-        removeCSS("/css/game.css");
-        removeCSS("/css/auth.css");
-        removeCSS("/css/home.css");
-        removeCSS("/css/discover.css");
-        removeCSS("/css/iris.css");
-        removeJS("/js/iris.js");
-        removeJS("/js/home.js");
-        removeJS("/js/discover.js");
         addCSS("/css/feedback.css");
         addCSS("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
         addJS("https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js");
         addJS("https://code.jquery.com/jquery-3.2.1.slim.min.js");
         addJS("https://code.jquery.com/jquery-3.2.1.slim.min.js");
-    }, []);
+    });
 
 
     return <div className="Feedback" style={{backgroundColor: "black"}}>
@@ -52,4 +42,4 @@ function PostAuthFeedback() {
 </div>
 }
 
-export default PostAuthFeedback;
+export default Feedback;
