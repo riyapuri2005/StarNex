@@ -2,8 +2,6 @@ import React, {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import Cookies from "js-cookie";
 import addCSS from "../common_elements/AddCSS";
-import removeJS from "../common_elements/RemoveJS";
-import removeCSS from "../common_elements/RemoveCSS";
 import ClearAllScripts from "../common_elements/ClearAllScripts";
 
 
